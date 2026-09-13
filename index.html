@@ -87,9 +87,38 @@ button{font-family:inherit}
 .cartbtn .n[data-zero="1"]{background:var(--line);color:var(--ink-soft)}
 
 /* ---------- hero ---------- */
-.hero{padding:44px 0 40px;text-align:center}
-.hero h1{font-size:clamp(1.9rem,6.5vw,3rem);max-width:18ch;margin:0 auto}
-.hero-lede{margin:14px auto 0;max-width:44ch;color:var(--ink-soft)}
+.hero{padding:40px 0 44px}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:30px;justify-items:center;text-align:center}
+.hero-txt{max-width:44ch}
+.hero h1{font-size:clamp(1.9rem,6.5vw,3rem);margin:0 auto}
+.hero-lede{margin:14px auto 0;color:var(--ink-soft)}
+@media (min-width:900px){
+  .hero{padding:56px 0 64px}
+  .hero-grid{grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;justify-items:start;text-align:left}
+  .hero-txt{max-width:none}
+  .mark-shine-hero{margin-left:0}
+  .hero h1{margin:0}
+  .hero-lede{margin-left:0;max-width:40ch}
+  .hero-actions{justify-content:flex-start}
+}
+.hero-vid{
+  position:relative;margin:0;width:100%;max-width:330px;aspect-ratio:3/4;
+  border-radius:14px;overflow:hidden;border:1px solid var(--line);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.85), 0 2px 4px rgba(28,26,24,.06), 0 22px 44px rgba(28,26,24,.16);
+  background:var(--sand);
+}
+.hero-vid video{width:100%;height:100%;object-fit:cover;display:block}
+.vid-btn{
+  position:absolute;right:10px;bottom:10px;width:40px;height:40px;border-radius:50%;
+  border:0;cursor:pointer;background:rgba(28,26,24,.55);backdrop-filter:blur(6px);
+  display:flex;align-items:center;justify-content:center;transition:background .2s;
+}
+.vid-btn:hover{background:rgba(28,26,24,.78)}
+.vid-ico{display:block;width:12px;height:14px;border-left:4px solid #fff;border-right:4px solid #fff}
+.vid-btn[aria-pressed="false"] .vid-ico{
+  width:0;height:0;border:0;border-left:13px solid #fff;
+  border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:4px;
+}
 .status{display:inline-flex;align-items:center;gap:10px;margin-top:22px;padding:10px 18px 10px 14px;border:1.5px solid var(--ink);border-radius:999px;font-size:14px;font-weight:500}
 .status-dot{width:9px;height:9px;border-radius:50%;background:var(--gold);flex:none}
 .status.is-open .status-dot{background:var(--bamboo)}
@@ -359,18 +388,32 @@ button{font-family:inherit}
 <main id="top">
 
   <section class="hero">
-    <div class="wrap">
-      <span class="mark-shine mark-shine-hero"><svg class="mark" viewBox="0 0 300 300" role="img" aria-label="Viet Food"><use href="#mark"/></svg></span>
-      <h1>Beställ take away eller ät buffé hela dagen</h1>
-      <p class="hero-lede">Kinesiskt, vietnamesiskt och sushi. Välj rätter nedan, skicka beställningen — så står den klar när du kommer till Spiralen.</p>
-      <p class="status" id="status" role="status">
-        <span class="status-dot" aria-hidden="true"></span>
-        <span id="status-text">Kontrollerar öppettider</span>
-      </p>
-      <div class="hero-actions">
-        <a class="btn btn-red" href="#meny">Se menyn och beställ</a>
-        <a class="btn btn-ghost" href="#buffe">Buffé 129:-</a>
+    <div class="wrap hero-grid">
+      <div class="hero-txt">
+        <span class="mark-shine mark-shine-hero"><svg class="mark" viewBox="0 0 300 300" role="img" aria-label="Viet Food"><use href="#mark"/></svg></span>
+        <h1>Beställ take away eller ät buffé hela dagen</h1>
+        <p class="hero-lede">Kinesiskt, vietnamesiskt och sushi. Välj rätter nedan, skicka beställningen — så står den klar när du kommer till Spiralen.</p>
+        <p class="status" id="status" role="status">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span id="status-text">Kontrollerar öppettider</span>
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-red" href="#meny">Se menyn och beställ</a>
+          <a class="btn btn-ghost" href="#buffe">Buffé 129:-</a>
+        </div>
       </div>
+
+      <figure class="hero-vid">
+        <video id="herovid" playsinline muted loop preload="none"
+               poster="media/vietfood-hero-poster.jpg"
+               aria-label="Rätter från Viet Food">
+          <source src="media/vietfood-hero.webm" type="video/webm">
+          <source src="media/vietfood-hero.mp4" type="video/mp4">
+        </video>
+        <button type="button" class="vid-btn" id="vidbtn" aria-label="Pausa filmen" aria-pressed="true">
+          <span class="vid-ico" aria-hidden="true"></span>
+        </button>
+      </figure>
     </div>
   </section>
 
@@ -1060,6 +1103,31 @@ button{font-family:inherit}
     }, {rootMargin:'-140px 0px -70% 0px', threshold:0});
     Array.prototype.forEach.call(document.querySelectorAll('.cat'), function(c){ io.observe(c); });
   }
+
+  /* ---------- hero video ---------- */
+  (function(){
+    var v = $('herovid'), b = $('vidbtn');
+    if (!v) return;
+    var reduce = false, saver = false;
+    try { reduce = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch(e){}
+    try { saver = navigator.connection && (navigator.connection.saveData || /2g/.test(navigator.connection.effectiveType||'')); } catch(e){}
+
+    function play(){ v.play().then(function(){ b.setAttribute('aria-pressed','true'); b.setAttribute('aria-label','Pausa filmen'); }, function(){}); }
+    function pause(){ v.pause(); b.setAttribute('aria-pressed','false'); b.setAttribute('aria-label','Spela filmen'); }
+
+    b.addEventListener('click', function(){ v.paused ? (v.preload='auto', play()) : pause(); });
+
+    if (reduce || saver){ b.setAttribute('aria-pressed','false'); b.setAttribute('aria-label','Spela filmen'); return; }
+
+    if ('IntersectionObserver' in window){
+      new IntersectionObserver(function(en){
+        en.forEach(function(e){
+          if (e.isIntersecting){ if (v.preload!=='auto'){ v.preload='auto'; v.load(); } play(); }
+          else if (!v.paused) v.pause();
+        });
+      }, {threshold:0.25}).observe(v);
+    } else { v.preload='auto'; v.load(); play(); }
+  })();
 
   render();
 })();

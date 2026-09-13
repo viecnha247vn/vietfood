@@ -507,11 +507,9 @@ button{font-family:inherit}
 <script>
 (function(){
   var el = document.getElementById('splash'); if (!el) return;
-  var seen = false, reduce = false;
-  try { seen = sessionStorage.getItem('vf-splash') === '1'; } catch(e){}
+  var reduce = false;
   try { reduce = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch(e){}
-  if (seen || reduce){ el.parentNode.removeChild(el); return; }
-  try { sessionStorage.setItem('vf-splash','1'); } catch(e){}
+  if (reduce){ el.parentNode.removeChild(el); return; }
   var html = document.documentElement;
   html.style.overflow = 'hidden';
   var done = false;

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#080C0A">
+<meta name="theme-color" content="#0B181C">
 <title>Viet Food Spiralen — meny, take away och buffé i Norrköping</title>
 <meta name="description" content="Beställ take away från Viet Food i Spiralen, Norrköping. Kinesiskt, vietnamesiskt och sushi. Asiatisk buffé 129:- hela dagen.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,18 +12,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Baloo+2:wght@600;700;800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#080C0A;
-  --bg-2:#0C1512;
-  --bg-3:#040706;
-  --surface:#111B16;
-  --surface-2:#18241E;
+  --bg:#0B181C;
+  --bg-2:#102227;
+  --bg-3:#061114;
+  --surface:#12242A;
+  --surface-2:#1A3138;
   --line:rgba(230,236,230,.14);
   --line-2:rgba(230,236,230,.07);
   --text:#ECEFEA;
   --text-soft:rgba(236,239,234,.62);
-  --green:#1F7A4C;
-  --green-deep:#0D2C1E;
-  --gold:#C9A227;
+  --green:#2E8F6B;
+  --green-deep:#0E2A2C;
+  --gold:#C9A96A;
   --red:#E0233D;
   --red-dark:#C8102E;
   --white:#FFFFFF;
@@ -33,9 +33,9 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:calc(var(--bar) + 64px);background:var(--bg)}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;overflow:auto!important}*{animation:none!important;transition:none!important}.splash{display:none!important}}
 body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;padding-bottom:84px}
-::selection{background:var(--gold);color:#0B0F0D}
+::selection{background:var(--gold);color:#08171A}
 h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.08;margin:0;letter-spacing:-0.01em}
 p{margin:0 0 1rem}
 a{color:inherit}
@@ -49,6 +49,27 @@ button{font-family:inherit}
 .band-head{font-size:clamp(1.8rem,5.5vw,2.7rem);margin-bottom:14px}
 .lede{font-size:1.08rem;color:var(--text-soft)}
 
+/* ---------- màn hình chào ---------- */
+.splash{
+  position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(78% 58% at 50% 42%, #14282E 0%, #0B181C 58%, #050F12 100%);
+  animation:splashOut .72s cubic-bezier(.4,0,.2,1) 2.05s forwards;
+}
+@keyframes splashOut{to{opacity:0;visibility:hidden;transform:scale(1.05)}}
+.splash.is-done{opacity:0;visibility:hidden;pointer-events:none;transform:scale(1.05);transition:opacity .6s ease,transform .6s ease,visibility .6s}
+.splash-in{display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center;padding:20px}
+.splash-mark{
+  display:block;width:clamp(118px,32vw,164px);border-radius:9px;overflow:hidden;
+  box-shadow:0 26px 64px rgba(0,0,0,.62), 0 0 0 1px rgba(201,169,106,.28);
+  opacity:0;transform:translateY(16px) scale(.93);
+  animation:splashIn .95s cubic-bezier(.2,.8,.3,1) .12s forwards;
+}
+.splash-mark svg{display:block;width:100%;height:auto}
+@keyframes splashIn{to{opacity:1;transform:none}}
+.splash-line{display:block;width:0;height:1px;background:linear-gradient(90deg,rgba(201,169,106,0),#C9A96A,rgba(201,169,106,0));animation:splashLine 1.15s cubic-bezier(.2,.8,.3,1) .55s forwards}
+@keyframes splashLine{to{width:min(230px,56vw)}}
+.splash-txt{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:rgba(201,169,106,.82);opacity:0;animation:splashIn .8s ease .9s forwards}
+
 /* ---------- ánh sáng gương ---------- */
 @keyframes sheenPass{0%{transform:translate3d(-70%,0,0) rotate(9deg);opacity:0}9%{opacity:.5}30%{opacity:.5}42%{transform:translate3d(200%,0,0) rotate(9deg);opacity:0}100%{transform:translate3d(200%,0,0) rotate(9deg);opacity:0}}
 @keyframes glint{0%{transform:translate3d(-70%,0,0) rotate(9deg);opacity:0}20%{opacity:1}70%{opacity:1}100%{transform:translate3d(200%,0,0) rotate(9deg);opacity:0}}
@@ -58,11 +79,11 @@ button{font-family:inherit}
   box-shadow:inset 0 1px 0 rgba(255,255,255,.10), 0 1px 2px rgba(0,0,0,.4), 0 14px 32px rgba(0,0,0,.34);
   transition:transform .28s cubic-bezier(.2,.8,.3,1), box-shadow .28s ease, border-color .28s ease;
 }
-.card::before{content:"";position:absolute;inset:0 0 auto 0;height:2px;background:linear-gradient(90deg,var(--gold),rgba(201,162,39,0));transform:scaleX(0);transform-origin:left;z-index:4;transition:transform .45s cubic-bezier(.2,.8,.3,1)}
+.card::before{content:"";position:absolute;inset:0 0 auto 0;height:2px;background:linear-gradient(90deg,var(--gold),rgba(201,169,106,0));transform:scaleX(0);transform-origin:left;z-index:4;transition:transform .45s cubic-bezier(.2,.8,.3,1)}
 .card::after{content:"";position:absolute;top:-45%;left:-30%;width:78%;height:190%;background:radial-gradient(50% 50% at 50% 50%, rgba(255,255,255,.16) 0%, rgba(255,255,255,.09) 30%, rgba(255,255,255,.04) 52%, rgba(255,255,255,.012) 72%, rgba(255,255,255,0) 86%);pointer-events:none;z-index:3;opacity:0;transform:translate3d(-70%,0,0) rotate(9deg);animation:sheenPass 13s ease-in-out infinite}
 .card:nth-child(2)::after{animation-delay:-2.1s}.card:nth-child(3)::after{animation-delay:-4.3s}.card:nth-child(4)::after{animation-delay:-6.4s}.card:nth-child(5)::after{animation-delay:-8.6s}.card:nth-child(6)::after{animation-delay:-10.7s}
 @media (hover:hover){
-  .card:hover{transform:translateY(-5px);box-shadow:0 2px 5px rgba(0,0,0,.45), 0 26px 52px rgba(0,0,0,.5);border-color:rgba(201,162,39,.55)}
+  .card:hover{transform:translateY(-5px);box-shadow:0 2px 5px rgba(0,0,0,.45), 0 26px 52px rgba(0,0,0,.5);border-color:rgba(201,169,106,.55)}
   .card:hover::before{transform:scaleX(1)}
   .card:hover::after{animation:glint 1.15s cubic-bezier(.3,.6,.35,1) forwards}
   .card:active{transform:translateY(-1px) scale(.995)}
@@ -74,7 +95,7 @@ button{font-family:inherit}
   background:radial-gradient(150% 110% at 22% -12%, rgba(255,255,255,.22) 0%, rgba(255,255,255,.08) 34%, rgba(255,255,255,0) 80%),linear-gradient(180deg,#C8102E 0%,#8E0A20 100%);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.3), 0 16px 38px rgba(140,10,32,.45);
 }
-.card.is-red::before{background:linear-gradient(90deg,var(--gold),rgba(201,162,39,0))}
+.card.is-red::before{background:linear-gradient(90deg,var(--gold),rgba(201,169,106,0))}
 
 .mark-shine{position:relative;display:block;overflow:hidden}
 .mark-shine::after{content:"";position:absolute;top:-45%;left:-30%;width:78%;height:190%;background:radial-gradient(50% 50% at 50% 50%, rgba(255,255,255,.5) 0%, rgba(255,255,255,.28) 30%, rgba(255,255,255,.12) 52%, rgba(255,255,255,.03) 72%, rgba(255,255,255,0) 86%);pointer-events:none;opacity:0;transform:translate3d(-70%,0,0) rotate(9deg);animation:sheenPass 13s ease-in-out infinite}
@@ -102,7 +123,7 @@ button{font-family:inherit}
 
 /* ---------- hero ---------- */
 .hero{padding:40px 0 44px;position:relative}
-.hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(90% 70% at 50% 0%, rgba(31,122,76,.20) 0%, rgba(31,122,76,.06) 45%, rgba(8,12,10,0) 75%)}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(92% 74% at 50% -4%, rgba(46,143,107,.18) 0%, rgba(30,90,86,.07) 44%, rgba(11,24,28,0) 76%)}
 .hero>*{position:relative}
 .hero-grid{display:grid;grid-template-columns:1fr;gap:30px;justify-items:center;text-align:center}
 .hero-txt{max-width:44ch}
@@ -117,7 +138,7 @@ button{font-family:inherit}
   .hero-lede{margin-left:0;max-width:40ch}
   .hero-actions{justify-content:flex-start}
 }
-.hero-vid{position:relative;margin:0;width:100%;max-width:330px;aspect-ratio:3/4;border-radius:14px;overflow:hidden;border:1px solid rgba(201,162,39,.28);box-shadow:inset 0 1px 0 rgba(255,255,255,.14), 0 28px 60px rgba(0,0,0,.55);background:var(--surface)}
+.hero-vid{position:relative;margin:0;width:100%;max-width:330px;aspect-ratio:3/4;border-radius:14px;overflow:hidden;border:1px solid rgba(201,169,106,.28);box-shadow:inset 0 1px 0 rgba(255,255,255,.14), 0 28px 60px rgba(0,0,0,.55);background:var(--surface)}
 .hero-vid video{width:100%;height:100%;object-fit:cover;display:block}
 .vid-btn{position:absolute;right:10px;bottom:10px;width:40px;height:40px;border-radius:50%;border:0;cursor:pointer;background:rgba(4,7,6,.6);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;transition:background .2s}
 .vid-btn:hover{background:rgba(4,7,6,.85)}
@@ -134,7 +155,75 @@ button{font-family:inherit}
 .btn-ghost{border-color:var(--line);color:var(--text);background:transparent}
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
 .btn-line{border-color:var(--gold);color:var(--gold);background:transparent}
-.btn-line:hover{background:var(--gold);color:#0B0F0D}
+.btn-line:hover{background:var(--gold);color:#08171A}
+
+/* ---------- lá monstera ---------- */
+.leaf{position:absolute;pointer-events:none;z-index:0;
+  filter:drop-shadow(0 18px 34px rgba(0,0,0,.55));
+  transform-origin:50% 4%;animation:sway 13s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:var(--tf) rotate(-1.4deg)}50%{transform:var(--tf) rotate(1.4deg)}}
+.leaf-a{--tf:rotate(196deg);top:-118px;right:-108px;width:min(62vw,420px);opacity:.85}
+.leaf-b{--tf:rotate(148deg);top:-70px;left:-136px;width:min(52vw,340px);opacity:.7;animation-delay:-5s}
+.leaf-c{--tf:rotate(172deg);top:-90px;left:-110px;width:min(44vw,300px);opacity:.5;animation-delay:-8s}
+.leaf-d{--tf:rotate(210deg);bottom:-150px;right:-90px;width:min(40vw,270px);opacity:.42;animation-delay:-3s}
+@media (max-width:700px){
+  .leaf-a{width:64vw;right:-124px;top:-96px}
+  .leaf-b{width:52vw;left:-118px;top:-56px;opacity:.55}
+}
+.hero,.band-sand,.foot{position:relative;overflow:hidden}
+.hero-grid,.band-sand>.wrap,.foot>.wrap{position:relative;z-index:1}
+
+/* ---------- chữ vàng nhũ ---------- */
+.hero h1,.band-head,.info-h,.odone h3{color:var(--gold)}
+@supports (-webkit-background-clip:text) or (background-clip:text){
+  .hero h1,.band-head,.info-h,.odone h3{
+    background:linear-gradient(100deg,#8C7440 0%,#C9A96A 22%,#F5E7C4 44%,#E0CB96 54%,#C9A96A 70%,#8C7440 100%);
+    background-size:260% 100%;
+    -webkit-background-clip:text;background-clip:text;
+    color:transparent;-webkit-text-fill-color:transparent;
+    animation:goldSweep 9s ease-in-out infinite;
+  }
+  .band-head{animation-delay:-3s}
+  .info-h{animation-delay:-6s}
+}
+@keyframes goldSweep{0%{background-position:120% 0}45%{background-position:-20% 0}100%{background-position:-20% 0}}
+.hero-lede b{color:var(--gold);font-weight:600}
+.cat-h{color:var(--gold)}
+
+/* ---------- nút vàng ---------- */
+.btn-gold{
+  background:linear-gradient(180deg,#E4CE9C 0%,#C9A96A 52%,#A98A52 100%);
+  color:#08171A;border-color:transparent;position:relative;overflow:hidden;
+  box-shadow:0 10px 26px rgba(201,169,106,.28), inset 0 1px 0 rgba(255,255,255,.45);
+}
+.btn-gold:hover{background:linear-gradient(180deg,#EEDCB2 0%,#D6B87C 52%,#B8985E 100%)}
+.btn-gold::after{content:"";position:absolute;top:-45%;left:-30%;width:60%;height:190%;
+  background:radial-gradient(50% 50% at 50% 50%, rgba(255,255,255,.75) 0%, rgba(255,255,255,.25) 45%, rgba(255,255,255,0) 78%);
+  transform:translate3d(-70%,0,0) rotate(9deg);opacity:0;pointer-events:none;
+  animation:sheenPass 9s ease-in-out infinite}
+
+/* ---------- hộp Boka & Beställ ---------- */
+.modal{
+  position:fixed;z-index:90;left:50%;top:50%;transform:translate(-50%,-46%) scale(.96);
+  width:min(460px,calc(100vw - 32px));max-height:86vh;overflow:auto;
+  background:linear-gradient(180deg,#12201A 0%,#0A120F 100%);
+  border:1px solid rgba(201,169,106,.35);border-radius:14px;
+  box-shadow:0 30px 70px rgba(0,0,0,.7);
+  opacity:0;pointer-events:none;transition:opacity .22s ease, transform .28s cubic-bezier(.2,.8,.3,1);
+}
+.modal.is-on{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}
+.modal-h{display:flex;align-items:center;justify-content:space-between;padding:20px 20px 12px;border-bottom:1px solid var(--line-2)}
+.modal-h h2{font-size:1.25rem;color:var(--gold)}
+.modal-body{padding:14px 20px 22px;display:grid;gap:10px}
+.choice{
+  display:block;text-align:left;text-decoration:none;cursor:pointer;
+  padding:16px 18px;border-radius:10px;border:1px solid var(--line);
+  background:var(--surface);color:var(--text);font:inherit;
+  transition:border-color .2s,background .2s,transform .2s;
+}
+.choice:hover{border-color:var(--gold);background:var(--surface-2);transform:translateY(-2px)}
+.choice-t{display:block;font-family:var(--display);font-weight:700;font-size:1.02rem;margin-bottom:3px}
+.choice-d{display:block;font-size:13.5px;color:var(--text-soft);line-height:1.5}
 
 /* ---------- menu ---------- */
 .menu{padding:28px 0 56px}
@@ -144,7 +233,7 @@ button{font-family:inherit}
 .search{position:relative}
 .search input{width:100%;height:46px;border:1.5px solid var(--line);border-radius:999px;background:var(--surface);padding:0 44px 0 44px;font:inherit;font-size:16px;color:var(--text)}
 .search input::placeholder{color:rgba(236,239,234,.42)}
-.search input:focus{border-color:var(--gold);outline:none;box-shadow:0 0 0 3px rgba(201,162,39,.18)}
+.search input:focus{border-color:var(--gold);outline:none;box-shadow:0 0 0 3px rgba(201,169,106,.18)}
 .search svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:18px;height:18px;pointer-events:none}
 .search .clear{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:32px;height:32px;border:0;border-radius:50%;background:transparent;font-size:20px;color:var(--text-soft);cursor:pointer;display:none}
 .search.has .clear{display:block}
@@ -152,9 +241,9 @@ button{font-family:inherit}
 .chips::-webkit-scrollbar{display:none}
 .chip{flex:none;padding:8px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);font-size:13.5px;font-weight:600;color:var(--text-soft);text-decoration:none;white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
 .chip:hover{border-color:var(--gold);color:var(--gold)}
-.chip.is-on{background:var(--gold);border-color:var(--gold);color:#0B0F0D}
+.chip.is-on{background:var(--gold);border-color:var(--gold);color:#08171A}
 .cat{padding-top:30px}
-.cat-h{font-size:1.35rem;display:flex;align-items:baseline;gap:10px;padding-bottom:8px;border-bottom:1.5px solid rgba(201,162,39,.5)}
+.cat-h{font-size:1.35rem;display:flex;align-items:baseline;gap:10px;padding-bottom:8px;border-bottom:1.5px solid rgba(201,169,106,.5)}
 .cat-n{font-family:var(--body);font-size:13px;font-weight:600;color:var(--text-soft)}
 .mlist{list-style:none;padding:0;margin:0}
 .mi{display:grid;grid-template-columns:34px 1fr auto;gap:10px 12px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line-2)}
@@ -177,7 +266,7 @@ button{font-family:inherit}
 .vbtn{position:relative;border:1.5px solid var(--line);border-radius:999px;background:var(--surface);padding:7px 12px;font-size:13px;color:var(--text);cursor:pointer;white-space:nowrap;transition:border-color .2s,color .2s}
 .vbtn b{font-weight:700;margin-left:2px}
 .vbtn:hover{border-color:var(--gold);color:var(--gold)}
-.vbtn.has{background:var(--gold);color:#0B0F0D;border-color:var(--gold)}
+.vbtn.has{background:var(--gold);color:#08171A;border-color:var(--gold)}
 .vbtn .vq{position:absolute;top:-8px;right:-6px;min-width:20px;height:20px;border-radius:999px;background:var(--red);color:#fff;font-size:11px;font-style:normal;font-weight:700;display:inline-flex;align-items:center;justify-content:center;padding:0 5px}
 .mi.is-hidden,.cat.is-hidden{display:none}
 .no-hits{display:none;padding:40px 0;color:var(--text-soft);text-align:center}
@@ -244,7 +333,7 @@ button{font-family:inherit}
 .hours td:last-child{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
 .hours tr.is-today td{color:var(--gold)}
 .hours tr.is-today td:first-child::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--gold);margin-right:9px;vertical-align:middle}
-.find-card{background:linear-gradient(180deg,var(--green-deep) 0%,#081512 100%);border:1px solid rgba(201,162,39,.25);color:var(--text);padding:30px 28px;border-radius:10px;box-shadow:0 18px 40px rgba(0,0,0,.42)}
+.find-card{background:linear-gradient(180deg,var(--green-deep) 0%,#081512 100%);border:1px solid rgba(201,169,106,.25);color:var(--text);padding:30px 28px;border-radius:10px;box-shadow:0 18px 40px rgba(0,0,0,.42)}
 .find-card h3{font-size:1.3rem;margin-bottom:14px}
 .find-card address{font-style:normal;line-height:1.9;color:var(--text-soft)}
 .find-card a{color:var(--gold)}
@@ -268,19 +357,32 @@ button{font-family:inherit}
 .foot-call:hover{border-bottom-color:var(--gold)}
 .foot-legal{margin-top:44px;padding-top:18px;border-top:1px solid var(--line-2);font-size:13px;color:rgba(236,239,234,.38)}
 
+/* ---------- nút nổi ---------- */
+.fab{
+  position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:65;
+  padding:15px 26px;border:0;border-radius:999px;cursor:pointer;
+  font-family:var(--body);font-size:15.5px;font-weight:600;color:#08171A;
+  background:linear-gradient(180deg,#E4CE9C 0%,#C9A96A 52%,#A98A52 100%);
+  box-shadow:0 12px 30px rgba(0,0,0,.5), 0 0 0 1px rgba(255,255,255,.18) inset;
+  transition:transform .25s cubic-bezier(.2,.8,.3,1), opacity .25s, box-shadow .25s;
+}
+.fab:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.3) inset}
+.fab:active{transform:translateY(0) scale(.97)}
+.fab.is-off{opacity:0;pointer-events:none;transform:translateY(90px)}
+
 /* ---------- thanh đặt hàng + tấm trượt ---------- */
 .obar{position:fixed;left:0;right:0;bottom:0;z-index:70;transform:translateY(110%);transition:transform .32s cubic-bezier(.2,.8,.3,1);padding:10px 16px calc(10px + env(safe-area-inset-bottom))}
 .obar.is-on{transform:translateY(0)}
-.obar-in{max-width:640px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:14px;background:linear-gradient(180deg,#1A2720 0%,#0E1713 100%);border:1px solid rgba(201,162,39,.35);color:#fff;border-radius:999px;padding:8px 8px 8px 22px;box-shadow:0 18px 44px rgba(0,0,0,.6)}
+.obar-in{max-width:640px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:14px;background:linear-gradient(180deg,#1A2720 0%,#0E1713 100%);border:1px solid rgba(201,169,106,.35);color:#fff;border-radius:999px;padding:8px 8px 8px 22px;box-shadow:0 18px 44px rgba(0,0,0,.6)}
 .obar-sum{font-size:15px;font-weight:600}
 .obar-sum small{display:block;font-weight:400;font-size:12.5px;color:var(--text-soft);margin-top:1px}
 .obar .btn{padding:12px 20px;border-radius:999px}
 .sheet-bg{position:fixed;inset:0;background:rgba(2,5,4,.7);backdrop-filter:blur(3px);z-index:80;opacity:0;pointer-events:none;transition:opacity .25s}
 .sheet-bg.is-on{opacity:1;pointer-events:auto}
-.sheet{position:fixed;z-index:90;left:0;right:0;bottom:0;max-height:92vh;background:var(--bg-2);border-top:1px solid rgba(201,162,39,.3);border-radius:18px 18px 0 0;box-shadow:0 -14px 46px rgba(0,0,0,.6);transform:translateY(105%);transition:transform .34s cubic-bezier(.2,.8,.3,1);display:flex;flex-direction:column}
+.sheet{position:fixed;z-index:90;left:0;right:0;bottom:0;max-height:92vh;background:var(--bg-2);border-top:1px solid rgba(201,169,106,.3);border-radius:18px 18px 0 0;box-shadow:0 -14px 46px rgba(0,0,0,.6);transform:translateY(105%);transition:transform .34s cubic-bezier(.2,.8,.3,1);display:flex;flex-direction:column}
 .sheet.is-on{transform:translateY(0)}
 @media (min-width:900px){
-  .sheet{left:auto;top:0;bottom:0;width:440px;max-height:none;border-radius:0;border-top:0;border-left:1px solid rgba(201,162,39,.3);transform:translateX(105%)}
+  .sheet{left:auto;top:0;bottom:0;width:440px;max-height:none;border-radius:0;border-top:0;border-left:1px solid rgba(201,169,106,.3);transform:translateX(105%)}
   .sheet.is-on{transform:translateX(0)}
 }
 .sheet-h{display:flex;align-items:center;justify-content:space-between;padding:18px 20px 12px;border-bottom:1px solid var(--line-2)}
@@ -300,7 +402,7 @@ button{font-family:inherit}
 .oform label{display:block;font-size:13px;font-weight:600;margin-bottom:5px}
 .oform input,.oform select,.oform textarea{width:100%;border:1.5px solid var(--line);border-radius:8px;background:var(--surface);padding:11px 12px;font:inherit;font-size:15.5px;color:var(--text)}
 .oform input::placeholder,.oform textarea::placeholder{color:rgba(236,239,234,.38)}
-.oform input:focus,.oform select:focus,.oform textarea:focus{border-color:var(--gold);outline:none;box-shadow:0 0 0 3px rgba(201,162,39,.18)}
+.oform input:focus,.oform select:focus,.oform textarea:focus{border-color:var(--gold);outline:none;box-shadow:0 0 0 3px rgba(201,169,106,.18)}
 .oform .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .oform textarea{min-height:64px;resize:vertical}
 .oerr{color:#FF7A8A;font-size:13px;display:none;margin-top:2px}
@@ -369,6 +471,22 @@ button{font-family:inherit}
     <rect width="300" height="300" rx="6" fill="url(#tileGloss)"/>
   </symbol>
 
+  <symbol id="leaf" viewBox="0 0 300 300">
+    <defs>
+      <linearGradient id="lgLeaf" x1="0" y1="0" x2=".65" y2="1">
+        <stop offset="0%" stop-color="#32573E"/><stop offset="50%" stop-color="#21402D"/><stop offset="100%" stop-color="#14291C"/>
+      </linearGradient>
+      <mask id="leafMask"><rect width="300" height="300" fill="#fff"/><g fill="#000"><ellipse cx="178.7" cy="223.8" rx="16" ry="8" transform="rotate(-24 178.7 223.8)"/><ellipse cx="185.5" cy="175.2" rx="15" ry="7" transform="rotate(-24 185.5 175.2)"/><ellipse cx="184.5" cy="129.3" rx="13" ry="5" transform="rotate(-24 184.5 129.3)"/><g transform="translate(300,0) scale(-1,1)"><ellipse cx="178.7" cy="223.8" rx="16" ry="8" transform="rotate(-24 178.7 223.8)"/><ellipse cx="185.5" cy="175.2" rx="15" ry="7" transform="rotate(-24 185.5 175.2)"/><ellipse cx="184.5" cy="129.3" rx="13" ry="5" transform="rotate(-24 184.5 129.3)"/></g></g></mask>
+    </defs>
+    <g fill="url(#lgLeaf)" mask="url(#leafMask)">
+      <path d="M150.0 288.0 Q150.0 288.0 155.7 286.4 Q161.3 284.8 165.0 283.1 Q168.6 281.5 171.8 279.9 Q174.9 278.3 177.8 276.7 Q180.7 275.0 183.3 273.4 Q185.9 271.8 188.4 270.2 Q190.9 268.6 193.3 266.9 Q195.6 265.3 197.8 263.7 Q200.1 262.1 202.2 260.5 Q204.3 258.8 206.4 257.2 Q208.4 255.6 210.4 254.0 Q212.4 252.4 213.8 251.1 Q215.2 249.9 188.3 258.4 Q161.3 266.8 193.8 253.2 Q226.3 239.7 227.9 238.1 Q229.5 236.4 231.1 234.8 Q232.6 233.2 234.1 231.6 Q235.6 229.9 237.0 228.3 Q238.4 226.7 239.8 225.1 Q241.1 223.5 242.4 221.8 Q243.7 220.2 244.9 218.6 Q246.2 217.0 247.3 215.4 Q248.5 213.8 249.6 212.1 Q250.7 210.5 251.8 208.9 Q252.8 207.3 253.8 205.6 Q254.8 204.0 255.6 202.7 Q256.4 201.3 210.8 209.8 Q165.3 218.2 213.4 204.6 Q261.5 191.1 262.2 189.4 Q262.9 187.8 263.5 186.2 Q264.2 184.6 264.7 183.0 Q265.3 181.3 265.8 179.7 Q266.3 178.1 266.8 176.5 Q267.2 174.9 267.6 173.2 Q268.0 171.6 268.3 170.0 Q268.6 168.4 268.9 166.8 Q269.1 165.1 269.3 163.5 Q269.5 161.9 269.7 160.3 Q269.8 158.7 269.9 157.0 Q270.0 155.4 270.0 154.1 Q270.0 152.7 219.0 161.2 Q168.0 169.6 218.7 156.0 Q269.4 142.5 269.1 140.8 Q268.9 139.2 268.6 137.6 Q268.3 136.0 268.0 134.4 Q267.6 132.7 267.2 131.1 Q266.8 129.5 266.3 127.9 Q265.8 126.3 265.3 124.6 Q264.8 123.0 264.2 121.4 Q263.6 119.8 262.9 118.2 Q262.2 116.5 261.5 114.9 Q260.8 113.3 260.0 111.7 Q259.3 110.1 258.4 108.4 Q257.6 106.8 213.2 115.3 Q168.8 123.7 210.2 110.1 Q251.5 96.6 250.4 95.0 Q249.3 93.3 248.1 91.7 Q247.0 90.1 245.8 88.5 Q244.5 86.8 243.3 85.2 Q242.0 83.6 240.7 82.0 Q239.3 80.4 237.9 78.8 Q236.5 77.1 235.1 75.5 Q233.6 73.9 232.1 72.3 Q230.6 70.6 229.8 69.8 Q229.0 69.0 197.6 77.5 Q166.2 85.9 192.2 72.3 Q218.3 58.8 216.4 57.2 Q214.6 55.5 212.7 53.9 Q210.7 52.3 208.8 50.7 Q206.8 49.1 204.7 47.4 Q202.6 45.8 200.4 44.2 Q198.2 42.6 196.0 40.9 Q193.7 39.3 191.3 37.7 Q188.9 36.1 186.3 34.5 Q183.8 32.8 181.1 31.2 Q178.3 29.6 175.4 28.0 Q172.4 26.4 169.1 24.8 Q165.8 23.1 161.7 21.5 Q157.7 19.9 153.8 18.9 L150.0 18.0 Z"/><g transform="translate(300,0) scale(-1,1)"><path d="M150.0 288.0 Q150.0 288.0 155.7 286.4 Q161.3 284.8 165.0 283.1 Q168.6 281.5 171.8 279.9 Q174.9 278.3 177.8 276.7 Q180.7 275.0 183.3 273.4 Q185.9 271.8 188.4 270.2 Q190.9 268.6 193.3 266.9 Q195.6 265.3 197.8 263.7 Q200.1 262.1 202.2 260.5 Q204.3 258.8 206.4 257.2 Q208.4 255.6 210.4 254.0 Q212.4 252.4 213.8 251.1 Q215.2 249.9 188.3 258.4 Q161.3 266.8 193.8 253.2 Q226.3 239.7 227.9 238.1 Q229.5 236.4 231.1 234.8 Q232.6 233.2 234.1 231.6 Q235.6 229.9 237.0 228.3 Q238.4 226.7 239.8 225.1 Q241.1 223.5 242.4 221.8 Q243.7 220.2 244.9 218.6 Q246.2 217.0 247.3 215.4 Q248.5 213.8 249.6 212.1 Q250.7 210.5 251.8 208.9 Q252.8 207.3 253.8 205.6 Q254.8 204.0 255.6 202.7 Q256.4 201.3 210.8 209.8 Q165.3 218.2 213.4 204.6 Q261.5 191.1 262.2 189.4 Q262.9 187.8 263.5 186.2 Q264.2 184.6 264.7 183.0 Q265.3 181.3 265.8 179.7 Q266.3 178.1 266.8 176.5 Q267.2 174.9 267.6 173.2 Q268.0 171.6 268.3 170.0 Q268.6 168.4 268.9 166.8 Q269.1 165.1 269.3 163.5 Q269.5 161.9 269.7 160.3 Q269.8 158.7 269.9 157.0 Q270.0 155.4 270.0 154.1 Q270.0 152.7 219.0 161.2 Q168.0 169.6 218.7 156.0 Q269.4 142.5 269.1 140.8 Q268.9 139.2 268.6 137.6 Q268.3 136.0 268.0 134.4 Q267.6 132.7 267.2 131.1 Q266.8 129.5 266.3 127.9 Q265.8 126.3 265.3 124.6 Q264.8 123.0 264.2 121.4 Q263.6 119.8 262.9 118.2 Q262.2 116.5 261.5 114.9 Q260.8 113.3 260.0 111.7 Q259.3 110.1 258.4 108.4 Q257.6 106.8 213.2 115.3 Q168.8 123.7 210.2 110.1 Q251.5 96.6 250.4 95.0 Q249.3 93.3 248.1 91.7 Q247.0 90.1 245.8 88.5 Q244.5 86.8 243.3 85.2 Q242.0 83.6 240.7 82.0 Q239.3 80.4 237.9 78.8 Q236.5 77.1 235.1 75.5 Q233.6 73.9 232.1 72.3 Q230.6 70.6 229.8 69.8 Q229.0 69.0 197.6 77.5 Q166.2 85.9 192.2 72.3 Q218.3 58.8 216.4 57.2 Q214.6 55.5 212.7 53.9 Q210.7 52.3 208.8 50.7 Q206.8 49.1 204.7 47.4 Q202.6 45.8 200.4 44.2 Q198.2 42.6 196.0 40.9 Q193.7 39.3 191.3 37.7 Q188.9 36.1 186.3 34.5 Q183.8 32.8 181.1 31.2 Q178.3 29.6 175.4 28.0 Q172.4 26.4 169.1 24.8 Q165.8 23.1 161.7 21.5 Q157.7 19.9 153.8 18.9 L150.0 18.0 Z"/></g>
+    </g>
+    <path d="M150 282 L150 22" stroke="#41724F" stroke-width="3" fill="none" stroke-linecap="round" opacity=".5"/>
+    <g stroke="#41724F" stroke-width="1.8" fill="none" opacity=".36" stroke-linecap="round" mask="url(#leafMask)">
+      <g>M150 254.2 L221.7 230.2 M150 205.6 L246.8 181.6 M150 157.0 L248.8 133.0 M150 111.1 L229.6 87.1 M150 73.3 L198.0 49.3</g><g transform="translate(300,0) scale(-1,1)">M150 254.2 L221.7 230.2 M150 205.6 L246.8 181.6 M150 157.0 L248.8 133.0 M150 111.1 L229.6 87.1 M150 73.3 L198.0 49.3</g>
+    </g>
+  </symbol>
+
   <symbol id="wordmark" viewBox="0 0 340 80">
     <text x="50" y="60" text-anchor="end" font-family="Baloo 2, Poppins, Arial, sans-serif" font-size="54" font-weight="800" paint-order="stroke" stroke="url(#sheenRed)" stroke-width="3" stroke-linejoin="round" fill="url(#sheenRed)">V</text>
     <text x="90" y="60" text-anchor="start" font-family="Baloo 2, Poppins, Arial, sans-serif" font-size="54" font-weight="800" letter-spacing="1" paint-order="stroke" stroke="url(#sheenRed)" stroke-width="3" stroke-linejoin="round" fill="url(#sheenRed)">ET FOOD</text>
@@ -378,6 +496,37 @@ button{font-family:inherit}
     <path d="M71 22 q13 -12 21 -8 q-11 14 -21 8 Z" fill="#6FBF4A"/>
   </symbol>
 </svg>
+
+<div class="splash" id="splash" aria-hidden="true">
+  <div class="splash-in">
+    <span class="splash-mark"><svg viewBox="0 0 300 300" aria-hidden="true"><use href="#mark"/></svg></span>
+    <span class="splash-line"></span>
+    <span class="splash-txt">Spiralen Galleria · Norrköping</span>
+  </div>
+</div>
+<script>
+(function(){
+  var el = document.getElementById('splash'); if (!el) return;
+  var seen = false, reduce = false;
+  try { seen = sessionStorage.getItem('vf-splash') === '1'; } catch(e){}
+  try { reduce = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch(e){}
+  if (seen || reduce){ el.parentNode.removeChild(el); return; }
+  try { sessionStorage.setItem('vf-splash','1'); } catch(e){}
+  var html = document.documentElement;
+  html.style.overflow = 'hidden';
+  var done = false;
+  function finish(){
+    if (done) return; done = true;
+    el.className = 'splash is-done';
+    html.style.overflow = '';
+    setTimeout(function(){ if (el.parentNode) el.parentNode.removeChild(el); }, 700);
+  }
+  ['click','touchstart','keydown','wheel'].forEach(function(ev){
+    window.addEventListener(ev, finish, {once:true, passive:true});
+  });
+  setTimeout(finish, 2600);
+})();
+</script>
 
 <header class="topbar">
   <div class="wrap">
@@ -399,6 +548,8 @@ button{font-family:inherit}
 <main id="top">
 
   <section class="hero">
+    <svg class="leaf leaf-a" viewBox="0 0 300 300" aria-hidden="true"><use href="#leaf"/></svg>
+    <svg class="leaf leaf-b" viewBox="0 0 300 300" aria-hidden="true"><use href="#leaf"/></svg>
     <div class="wrap hero-grid">
       <div class="hero-txt">
         <span class="mark-shine mark-shine-hero"><svg class="mark" viewBox="0 0 300 300" role="img" aria-label="Viet Food"><use href="#mark"/></svg></span>
@@ -409,8 +560,8 @@ button{font-family:inherit}
           <span id="status-text">Kontrollerar öppettider</span>
         </p>
         <div class="hero-actions">
-          <a class="btn btn-red" href="#meny">Se menyn och beställ</a>
-          <a class="btn btn-ghost" href="#buffe">Buffé 129:-</a>
+          <button type="button" class="btn btn-gold" id="bokabtn">Boka &amp; Beställ</button>
+          <a class="btn btn-ghost" href="#meny">Se menyn</a>
         </div>
       </div>
 
@@ -438,7 +589,7 @@ button{font-family:inherit}
         </address>
         <div class="map" id="map">
           <button type="button" class="map-load" id="maploadbtn">
-            <svg viewBox="0 0 24 24" aria-hidden="true" width="30" height="30" fill="none" stroke="#C9A227" stroke-width="1.8"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true" width="30" height="30" fill="none" stroke="#C9A96A" stroke-width="1.8"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
             <span>Visa kartan</span>
             <small>Kartan laddas från Google</small>
           </button>
@@ -715,6 +866,7 @@ button{font-family:inherit}
   </section>
 
   <section class="band band-sand" id="buffe">
+    <svg class="leaf leaf-c" viewBox="0 0 300 300" aria-hidden="true"><use href="#leaf"/></svg>
     <div class="wrap">
       <h2 class="band-head">Buffé på plats, 129:-</h2>
       <p class="lede measure">Ingen lunchtid att passa och inga tillägg i kassan. Buffén står framme från att vi öppnar tills vi stänger.</p>
@@ -779,6 +931,7 @@ button{font-family:inherit}
 </main>
 
 <footer class="foot">
+  <svg class="leaf leaf-d" viewBox="0 0 300 300" aria-hidden="true"><use href="#leaf"/></svg>
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
@@ -821,11 +974,36 @@ button{font-family:inherit}
   </div>
 </footer>
 
+<button type="button" class="fab" id="fab">Boka &amp; Beställ</button>
+
 <!-- order bar -->
 <div class="obar" id="obar" aria-live="polite">
   <div class="obar-in">
     <div class="obar-sum"><span id="obar-t">0:-</span><small id="obar-n">0 rätter</small></div>
     <button type="button" class="btn btn-red" id="obar-open">Visa beställning</button>
+  </div>
+</div>
+
+<!-- boka & beställ -->
+<div class="sheet-bg" id="bokabg"></div>
+<div class="modal" id="bokamodal" role="dialog" aria-modal="true" aria-labelledby="boka-title">
+  <div class="modal-h">
+    <h2 id="boka-title">Boka &amp; Beställ</h2>
+    <button type="button" class="sheet-x" id="boka-x" aria-label="Stäng">×</button>
+  </div>
+  <div class="modal-body">
+    <button type="button" class="choice" id="choice-order">
+      <span class="choice-t">Beställ take away</span>
+      <span class="choice-d">Välj rätter ur menyn och skicka beställningen. Hämtas i restaurangen.</span>
+    </button>
+    <a class="choice" href="tel:+46709190150">
+      <span class="choice-t">Boka bord</span>
+      <span class="choice-d">Ring 0709 190 150 — vi tar bokningar per telefon under öppettid.</span>
+    </a>
+    <a class="choice" href="#buffe" id="choice-buffe">
+      <span class="choice-t">Buffé på plats, 129:-</span>
+      <span class="choice-d">Ingen bokning behövs. Buffén står framme hela öppettiden.</span>
+    </a>
   </div>
 </div>
 
@@ -933,6 +1111,7 @@ button{font-family:inherit}
     var n = count(), t = total();
     $('cartn').textContent = n; $('cartn').setAttribute('data-zero', n?'0':'1');
     $('obar').className = 'obar' + (n ? ' is-on' : '');
+    var fab = $('fab'); if (fab) fab.className = 'fab' + (n ? ' is-off' : '');
     $('obar-t').textContent = kr(t);
     $('obar-n').textContent = n + (n===1 ? ' rätt' : ' rätter');
     /* menu controls */
@@ -1110,6 +1289,26 @@ button{font-family:inherit}
     }, {rootMargin:'-140px 0px -70% 0px', threshold:0});
     Array.prototype.forEach.call(document.querySelectorAll('.cat'), function(c){ io.observe(c); });
   }
+
+  /* ---------- Boka & Beställ ---------- */
+  (function(){
+    var m = $('bokamodal'), bg = $('bokabg'), btn = $('bokabtn');
+    if (!m || !btn) return;
+    function open(){ m.className='modal is-on'; bg.className='sheet-bg is-on'; document.body.style.overflow='hidden'; }
+    function close(){ m.className='modal'; bg.className='sheet-bg'; document.body.style.overflow=''; }
+    btn.addEventListener('click', open);
+    var fab = $('fab'); if (fab) fab.addEventListener('click', open);
+    $('boka-x').addEventListener('click', close);
+    bg.addEventListener('click', close);
+    $('choice-buffe').addEventListener('click', close);
+    $('choice-order').addEventListener('click', function(){
+      close();
+      var el = document.getElementById('meny');
+      if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+      setTimeout(function(){ var q = $('q'); if (q) q.focus({preventScroll:true}); }, 700);
+    });
+    document.addEventListener('keydown', function(e){ if (e.key==='Escape') close(); });
+  })();
 
   /* ---------- karta laddas först vid klick ---------- */
   (function(){

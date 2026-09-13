@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Viet Food Spiralen — meny, take away och buffé i Norrköping</title>
+<meta name="description" content="Beställ take away från Viet Food i Spiralen, Norrköping. Kinesiskt, vietnamesiskt och sushi. Asiatisk buffé 129:- hela dagen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Baloo+2:wght@600;700;800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#C8102E;--red-dark:#A50D24;--ink:#1C1A18;--ink-soft:#4A443E;
+  --white:#FFFFFF;--cream:#F8F2E6;--sand:#EDE4D2;--line:#DCD4C6;
+  --bamboo:#4C9A3F;--gold:#D4A24C;
+  --wrap:1080px;--bar:62px;
+  --display:"Poppins","Helvetica Neue",Arial,sans-serif;
+  --body:"Archivo","Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--bar) + 64px)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;padding-bottom:84px}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.08;margin:0;letter-spacing:-0.01em}
+p{margin:0 0 1rem}
+a{color:inherit}
+button{font-family:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+.measure{max-width:54ch}
+.band{padding:64px 0}
+.band-sand{background:var(--sand)}
+.band-ink{background:var(--ink);color:#EFEAE2}
+.band-head{font-size:clamp(1.8rem,5.5vw,2.7rem);margin-bottom:14px}
+.lede{font-size:1.08rem;color:var(--ink-soft)}
+.band-ink .lede{color:rgba(239,234,226,.72)}
+
+/* ---------- shared sheen ---------- */
+@keyframes sheenPass{0%{transform:translate3d(-70%,0,0) rotate(9deg);opacity:0}9%{opacity:.5}30%{opacity:.5}42%{transform:translate3d(200%,0,0) rotate(9deg);opacity:0}100%{transform:translate3d(200%,0,0) rotate(9deg);opacity:0}}
+@keyframes glint{0%{transform:translate3d(-70%,0,0) rotate(9deg);opacity:0}20%{opacity:1}70%{opacity:1}100%{transform:translate3d(200%,0,0) rotate(9deg);opacity:0}}
+.card{
+  position:relative;overflow:hidden;border-radius:8px;border:1px solid var(--line);
+  background:radial-gradient(150% 110% at 22% -12%, rgba(255,255,255,.92) 0%, rgba(255,255,255,.42) 32%, rgba(255,255,255,.12) 56%, rgba(255,255,255,0) 78%),linear-gradient(180deg,#FFFDF7 0%,#F4EEDF 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.85), 0 1px 2px rgba(28,26,24,.05), 0 10px 24px rgba(28,26,24,.06);
+  transition:transform .28s cubic-bezier(.2,.8,.3,1), box-shadow .28s ease, border-color .28s ease;
+}
+.card::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--red);transform:scaleX(0);transform-origin:left;z-index:4;transition:transform .45s cubic-bezier(.2,.8,.3,1)}
+.card::after{content:"";position:absolute;top:-45%;left:-30%;width:78%;height:190%;background:radial-gradient(50% 50% at 50% 50%, rgba(255,255,255,.58) 0%, rgba(255,255,255,.34) 30%, rgba(255,255,255,.15) 52%, rgba(255,255,255,.04) 72%, rgba(255,255,255,0) 86%);pointer-events:none;z-index:3;opacity:0;transform:translate3d(-70%,0,0) rotate(9deg);animation:sheenPass 13s ease-in-out infinite}
+.card:nth-child(2)::after{animation-delay:-2.1s}.card:nth-child(3)::after{animation-delay:-4.3s}.card:nth-child(4)::after{animation-delay:-6.4s}.card:nth-child(5)::after{animation-delay:-8.6s}.card:nth-child(6)::after{animation-delay:-10.7s}
+@media (hover:hover){
+  .card:hover{transform:translateY(-5px);box-shadow:0 2px 5px rgba(28,26,24,.07), 0 20px 40px rgba(28,26,24,.14);border-color:var(--red)}
+  .card:hover::before{transform:scaleX(1)}
+  .card:hover::after{animation:glint 1.15s cubic-bezier(.3,.6,.35,1) forwards}
+  .card:active{transform:translateY(-1px) scale(.995)}
+}
+@media (hover:none){.card::before{transform:scaleX(1)}}
+.card.is-dark{color:#EFEAE2;border-color:rgba(239,234,226,.28);background:radial-gradient(150% 110% at 22% -12%, rgba(255,255,255,.13) 0%, rgba(255,255,255,.06) 34%, rgba(255,255,255,.02) 58%, rgba(255,255,255,0) 80%),linear-gradient(180deg,#272420 0%,#1A1816 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.16), 0 10px 26px rgba(0,0,0,.28)}
+.card.is-red{color:var(--white);border-color:var(--red);background:radial-gradient(150% 110% at 22% -12%, rgba(255,255,255,.30) 0%, rgba(255,255,255,.12) 34%, rgba(255,255,255,.03) 58%, rgba(255,255,255,0) 80%),linear-gradient(180deg,#D3132F 0%,#AE0C25 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.34), 0 1px 2px rgba(28,26,24,.06), 0 12px 28px rgba(168,12,36,.22)}
+.card.is-red::before{background:var(--gold)}
+
+.mark-shine{position:relative;display:block;overflow:hidden}
+.mark-shine::after{content:"";position:absolute;top:-45%;left:-30%;width:78%;height:190%;background:radial-gradient(50% 50% at 50% 50%, rgba(255,255,255,.6) 0%, rgba(255,255,255,.34) 30%, rgba(255,255,255,.15) 52%, rgba(255,255,255,.04) 72%, rgba(255,255,255,0) 86%);pointer-events:none;opacity:0;transform:translate3d(-70%,0,0) rotate(9deg);animation:sheenPass 13s ease-in-out infinite}
+.mark{display:block;width:100%;height:auto}
+.mark-shine-hero{width:clamp(120px,28vw,150px);margin:0 auto 22px;border-radius:6px}
+.mark-shine-hero::after{animation-delay:-6.5s}
+.mark-shine-bar{width:132px;border-radius:3px}
+.mark-shine-bar::after{mix-blend-mode:overlay;animation-delay:-1.4s}
+.mark-shine-foot{width:90px;margin-bottom:16px;border-radius:5px}
+.mark-shine-foot::after{animation-delay:-9.2s}
+
+/* ---------- topbar ---------- */
+.topbar{position:sticky;top:0;z-index:60;background:rgba(248,242,230,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;height:var(--bar)}
+.topbar-name{display:flex;align-items:center;color:var(--red);text-decoration:none}
+.topbar-mark{width:100%;height:auto;display:block}
+.topbar-nav{display:flex;gap:22px;font-size:14px;margin-left:auto}
+.topbar-nav a{text-decoration:none;color:var(--ink-soft);padding:4px 0;border-bottom:2px solid transparent}
+.topbar-nav a:hover{color:var(--red);border-bottom-color:var(--red)}
+@media (max-width:760px){.topbar-nav{display:none}}
+.cartbtn{
+  display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 14px 0 12px;
+  border:1.5px solid var(--ink);border-radius:999px;background:transparent;color:var(--ink);
+  font-size:14px;font-weight:600;cursor:pointer;
+}
+.cartbtn:hover{border-color:var(--red);color:var(--red)}
+.cartbtn .n{min-width:22px;height:22px;border-radius:999px;background:var(--red);color:#fff;font-size:12px;display:inline-flex;align-items:center;justify-content:center;padding:0 6px}
+.cartbtn .n[data-zero="1"]{background:var(--line);color:var(--ink-soft)}
+
+/* ---------- hero ---------- */
+.hero{padding:44px 0 40px;text-align:center}
+.hero h1{font-size:clamp(1.9rem,6.5vw,3rem);max-width:18ch;margin:0 auto}
+.hero-lede{margin:14px auto 0;max-width:44ch;color:var(--ink-soft)}
+.status{display:inline-flex;align-items:center;gap:10px;margin-top:22px;padding:10px 18px 10px 14px;border:1.5px solid var(--ink);border-radius:999px;font-size:14px;font-weight:500}
+.status-dot{width:9px;height:9px;border-radius:50%;background:var(--gold);flex:none}
+.status.is-open .status-dot{background:var(--bamboo)}
+.status.is-closed .status-dot{background:var(--red)}
+.hero-actions{margin-top:22px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 24px;border-radius:5px;font-size:15px;font-weight:600;text-decoration:none;border:2px solid transparent;cursor:pointer;line-height:1.2}
+.btn-red{background:var(--red);color:var(--white)}
+.btn-red:hover{background:var(--red-dark)}
+.btn-ghost{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-ghost:hover{background:var(--ink);color:var(--cream)}
+.btn-line{border-color:var(--red);color:var(--red);background:transparent}
+.btn-line:hover{background:var(--red);color:#fff}
+
+/* ---------- menu ---------- */
+.menu{padding:28px 0 56px}
+.menu-top{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:14px}
+.menu-top p{margin:6px 0 0;color:var(--ink-soft);font-size:15px}
+.toolbar{position:sticky;top:var(--bar);z-index:50;background:rgba(248,242,230,.96);backdrop-filter:blur(8px);margin:0 -20px;padding:10px 20px 8px;border-bottom:1px solid var(--line)}
+.search{position:relative}
+.search input{
+  width:100%;height:46px;border:1.5px solid var(--line);border-radius:999px;background:#fff;
+  padding:0 44px 0 44px;font:inherit;font-size:16px;color:var(--ink);
+}
+.search input:focus{border-color:var(--red);outline:none;box-shadow:0 0 0 3px rgba(200,16,46,.12)}
+.search svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:18px;height:18px;pointer-events:none}
+.search .clear{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:32px;height:32px;border:0;border-radius:50%;background:transparent;font-size:20px;color:var(--ink-soft);cursor:pointer;display:none}
+.search.has .clear{display:block}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:10px 0 4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;padding:8px 14px;border-radius:999px;border:1.5px solid var(--line);background:#fff;font-size:13.5px;font-weight:600;color:var(--ink-soft);text-decoration:none;white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
+.chip:hover{border-color:var(--ink);color:var(--ink)}
+.chip.is-on{background:var(--ink);border-color:var(--ink);color:#fff}
+.cat{padding-top:30px}
+.cat-h{font-size:1.35rem;display:flex;align-items:baseline;gap:10px;padding-bottom:8px;border-bottom:2px solid var(--ink)}
+.cat-n{font-family:var(--body);font-size:13px;font-weight:600;color:var(--ink-soft)}
+.mlist{list-style:none;padding:0;margin:0}
+.mi{display:grid;grid-template-columns:34px 1fr auto;gap:10px 12px;align-items:center;padding:13px 0;border-bottom:1px solid rgba(28,26,24,.09)}
+.mi-no{color:var(--red);font-weight:700;font-size:12.5px;font-variant-numeric:tabular-nums;padding-top:2px;align-self:start}
+.mi-body{min-width:0}
+.mi-name{display:block;font-weight:600;font-size:15.5px;line-height:1.35}
+.mi-desc{display:block;font-size:13.5px;color:var(--ink-soft);margin-top:3px;line-height:1.45}
+.mi-buy{display:flex;align-items:center;gap:12px;justify-content:flex-end}
+.mi-price{font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;font-size:15px}
+.mi-info{color:var(--ink-soft);font-weight:600}
+.ctl{display:inline-flex}
+.add,.inc,.dec{width:38px;height:38px;border-radius:50%;border:0;cursor:pointer;font-size:22px;line-height:1;display:inline-flex;align-items:center;justify-content:center;transition:transform .12s}
+.add{background:var(--red);color:#fff}
+.add:hover{background:var(--red-dark)}
+.add:active,.inc:active,.dec:active{transform:scale(.92)}
+.stp{display:inline-flex;align-items:center;border:1.5px solid var(--ink);border-radius:999px;background:#fff}
+.stp .q{min-width:26px;text-align:center;font-weight:700;font-size:15px;font-variant-numeric:tabular-nums}
+.inc,.dec{width:34px;height:34px;background:transparent;color:var(--ink);font-size:20px}
+.mi-vars{flex-wrap:wrap;gap:6px}
+.vbtn{position:relative;border:1.5px solid var(--ink);border-radius:999px;background:#fff;padding:7px 12px;font-size:13px;color:var(--ink);cursor:pointer;white-space:nowrap}
+.vbtn b{font-weight:700;margin-left:2px}
+.vbtn:hover{border-color:var(--red);color:var(--red)}
+.vbtn.has{background:var(--ink);color:#fff;border-color:var(--ink)}
+.vbtn .vq{position:absolute;top:-8px;right:-6px;min-width:20px;height:20px;border-radius:999px;background:var(--red);color:#fff;font-size:11px;font-style:normal;font-weight:700;display:inline-flex;align-items:center;justify-content:center;padding:0 5px}
+.mi.is-hidden,.cat.is-hidden{display:none}
+.no-hits{display:none;padding:40px 0;color:var(--ink-soft);text-align:center}
+.no-hits.is-on{display:block}
+@media (max-width:560px){
+  .mi{grid-template-columns:30px 1fr;}
+  .mi-buy{grid-column:2;justify-content:space-between}
+  .mi-vars{justify-content:flex-start}
+}
+
+/* ---------- buffet ---------- */
+.incl{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+@media (max-width:760px){.incl{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:420px){.incl{grid-template-columns:1fr}}
+.incl-cell{padding:22px 22px}
+.incl-cell h3{font-size:1.1rem;margin-bottom:6px}
+.incl-cell p{margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5}
+.incl-num{font-family:var(--display);font-weight:700;font-size:13px;color:var(--red);display:block;margin-bottom:10px}
+.price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px}
+@media (max-width:820px){.price-grid{grid-template-columns:repeat(2,1fr)}}
+.price-card{padding:22px 22px 24px}
+.price-label{display:block;font-size:13px;font-weight:600;color:var(--red);margin-bottom:12px}
+.price-card.is-red .price-label{color:#FFD9DE}
+.price-value{display:block;font-family:var(--display);font-weight:700;font-size:clamp(1.9rem,6vw,2.4rem);line-height:1;font-variant-numeric:tabular-nums}
+.price-sub{display:block;margin-top:8px;font-size:13px;color:var(--ink-soft);line-height:1.5}
+.price-card.is-red .price-sub{color:rgba(255,255,255,.84)}
+.ta-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
+@media (max-width:700px){.ta-grid{grid-template-columns:1fr}}
+.ta-card{padding:26px 26px}
+.ta-price{font-family:var(--display);font-weight:700;font-size:2.2rem;line-height:1;display:block;margin-bottom:8px}
+.ta-card h3{font-size:1.3rem;margin-bottom:8px}
+.ta-card p{margin:0;font-size:14.5px;color:rgba(239,234,226,.75)}
+.ta-card.is-red p{color:rgba(255,255,255,.88)}
+.ta-old{font-size:13px;color:#FFE0B8;display:block;margin-top:10px}
+.small-note{font-size:14px;color:var(--ink-soft);margin-top:18px}
+
+/* ---------- hours + find ---------- */
+.two-col{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:start}
+@media (max-width:860px){.two-col{grid-template-columns:1fr;gap:34px}}
+.hours{width:100%;border-collapse:collapse;font-size:1.02rem}
+.hours th{text-align:left;font-weight:400;font-size:13px;color:var(--ink-soft);padding-bottom:8px}
+.hours th:last-child{text-align:right}
+.hours td{padding:13px 0;border-top:1px solid var(--line)}
+.hours td:last-child{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+.hours tr.is-today td{color:var(--red)}
+.hours tr.is-today td:first-child::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--red);margin-right:9px;vertical-align:middle}
+.find-card{background:var(--ink);color:#EFEAE2;padding:30px 28px;border-radius:8px}
+.find-card h3{font-size:1.3rem;margin-bottom:14px}
+.find-card address{font-style:normal;line-height:1.9;color:rgba(239,234,226,.84)}
+.find-card a{color:var(--gold)}
+.find-list{list-style:none;padding:0;margin:20px 0 24px;font-size:15px;color:rgba(239,234,226,.7)}
+.find-list li{padding:8px 0;border-top:1px solid rgba(239,234,226,.16)}
+
+/* ---------- footer ---------- */
+.foot{background:var(--ink);color:rgba(239,234,226,.7);padding:56px 0 30px;font-size:14px}
+.foot a{color:rgba(239,234,226,.7);text-decoration:none;border-bottom:1px solid rgba(239,234,226,.24)}
+.foot a:hover{color:#EFEAE2;border-bottom-color:var(--gold)}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.1fr;gap:40px}
+@media (max-width:880px){.foot-grid{grid-template-columns:1fr 1fr;gap:34px 28px}}
+@media (max-width:520px){.foot-grid{grid-template-columns:1fr;gap:28px}}
+.foot-brand p{margin:0;max-width:30ch;line-height:1.7}
+.foot-h{font-family:var(--body);font-size:13px;font-weight:600;color:var(--gold);margin:0 0 12px}
+.foot-list{list-style:none;padding:0;margin:0}
+.foot-list li{padding:5px 0;line-height:1.6;overflow-wrap:anywhere}
+.foot-hours li{display:flex;justify-content:space-between;gap:16px;font-variant-numeric:tabular-nums}
+.foot-hours span:last-child{color:rgba(239,234,226,.92)}
+.foot-call{display:inline-block;margin-bottom:6px;font-family:var(--display);font-size:21px;font-weight:700;color:#EFEAE2;border-bottom:2px solid var(--red);text-decoration:none}
+.foot-legal{margin-top:44px;padding-top:18px;border-top:1px solid rgba(239,234,226,.16);font-size:13px;color:rgba(239,234,226,.46)}
+
+/* ---------- order bar + sheet ---------- */
+.obar{
+  position:fixed;left:0;right:0;bottom:0;z-index:70;
+  transform:translateY(110%);transition:transform .32s cubic-bezier(.2,.8,.3,1);
+  padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+}
+.obar.is-on{transform:translateY(0)}
+.obar-in{
+  max-width:640px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:14px;
+  background:var(--ink);color:#fff;border-radius:999px;padding:8px 8px 8px 22px;
+  box-shadow:0 12px 32px rgba(28,26,24,.32);
+}
+.obar-sum{font-size:15px;font-weight:600}
+.obar-sum small{display:block;font-weight:400;font-size:12.5px;color:rgba(255,255,255,.65);margin-top:1px}
+.obar .btn{padding:12px 20px;border-radius:999px}
+
+.sheet-bg{position:fixed;inset:0;background:rgba(28,26,24,.45);z-index:80;opacity:0;pointer-events:none;transition:opacity .25s}
+.sheet-bg.is-on{opacity:1;pointer-events:auto}
+.sheet{
+  position:fixed;z-index:90;left:0;right:0;bottom:0;max-height:92vh;
+  background:var(--cream);border-radius:18px 18px 0 0;box-shadow:0 -12px 40px rgba(28,26,24,.28);
+  transform:translateY(105%);transition:transform .34s cubic-bezier(.2,.8,.3,1);
+  display:flex;flex-direction:column;
+}
+.sheet.is-on{transform:translateY(0)}
+@media (min-width:900px){
+  .sheet{left:auto;top:0;bottom:0;width:440px;max-height:none;border-radius:0;transform:translateX(105%)}
+  .sheet.is-on{transform:translateX(0)}
+}
+.sheet-h{display:flex;align-items:center;justify-content:space-between;padding:18px 20px 12px;border-bottom:1px solid var(--line)}
+.sheet-h h2{font-size:1.25rem}
+.sheet-x{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--line);background:#fff;font-size:20px;cursor:pointer;line-height:1}
+.sheet-body{overflow:auto;padding:6px 20px 24px;flex:1}
+.olist{list-style:none;padding:0;margin:0}
+.olist li{display:grid;grid-template-columns:1fr auto;gap:6px 12px;padding:12px 0;border-bottom:1px solid var(--line);align-items:center}
+.oname{font-weight:600;font-size:15px}
+.ovar{display:block;font-size:13px;color:var(--ink-soft);font-weight:400}
+.oline{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center}
+.osum{font-weight:700;font-variant-numeric:tabular-nums}
+.oempty{padding:36px 0;text-align:center;color:var(--ink-soft)}
+.total{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0 4px;font-family:var(--display);font-weight:700;font-size:1.35rem}
+.total small{font-family:var(--body);font-weight:400;font-size:13px;color:var(--ink-soft)}
+.oform{margin-top:14px;display:grid;gap:10px}
+.oform label{display:block;font-size:13px;font-weight:600;margin-bottom:5px}
+.oform input,.oform select,.oform textarea{width:100%;border:1.5px solid var(--line);border-radius:6px;background:#fff;padding:11px 12px;font:inherit;font-size:15.5px;color:var(--ink)}
+.oform input:focus,.oform select:focus,.oform textarea:focus{border-color:var(--red);outline:none;box-shadow:0 0 0 3px rgba(200,16,46,.12)}
+.oform .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.oform textarea{min-height:64px;resize:vertical}
+.oerr{color:var(--red);font-size:13px;display:none;margin-top:2px}
+.oerr.is-on{display:block}
+.oacts{display:grid;gap:8px;margin-top:14px}
+.oacts .btn{text-align:center;width:100%}
+.ohint{font-size:13px;color:var(--ink-soft);margin:10px 0 0;line-height:1.5}
+.copied{font-size:13px;color:var(--bamboo);font-weight:600;display:none;text-align:center}
+.onote{grid-column:1/-1}
+.onote input{width:100%;border:0;border-bottom:1.5px dashed var(--line);background:transparent;padding:6px 0 5px;font:inherit;font-size:14px;color:var(--ink)}
+.onote input:focus{outline:none;border-bottom-color:var(--red);border-bottom-style:solid}
+.onote input::placeholder{color:#8B847B}
+.odone{text-align:center;padding-top:28px}
+.odone-mark{width:64px;height:64px;border-radius:50%;background:var(--bamboo);color:#fff;font-size:34px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.odone h3{font-size:1.5rem;margin-bottom:6px}
+.odone-no{font-size:14px;color:var(--ink-soft);margin-bottom:14px}
+.odone-sum{text-align:left;margin:18px 0 8px;padding:14px 16px;border-radius:8px;background:#fff;border:1px solid var(--line);font-size:14px;line-height:1.6;white-space:pre-line}
+.btn[disabled]{opacity:.55;cursor:wait}
+.copied.is-on{display:block}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="sheenRed" x1="0" y1="0" x2="1" y2="0.35">
+      <stop offset="0%" stop-color="#C8102E"/>
+      <stop offset="24%" stop-color="#C8102E"/>
+      <stop offset="36%" stop-color="#D11C38"/>
+      <stop offset="43%" stop-color="#DE3A52"/>
+      <stop offset="50%" stop-color="#EA6376"/>
+      <stop offset="57%" stop-color="#DE3A52"/>
+      <stop offset="64%" stop-color="#D11C38"/>
+      <stop offset="76%" stop-color="#C8102E"/>
+      <stop offset="100%" stop-color="#C8102E"/>
+    </linearGradient>
+
+    <linearGradient id="tileGloss" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.22"/>
+      <stop offset="28%" stop-color="#FFFFFF" stop-opacity="0.11"/>
+      <stop offset="58%" stop-color="#FFFFFF" stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <symbol id="mark" viewBox="0 0 300 300">
+    <rect width="300" height="300" rx="6" fill="#C8102E"/>
+    <text x="118" y="186" text-anchor="end" font-family="Baloo 2, Poppins, Arial, sans-serif" font-size="66" font-weight="800" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round" fill="#FFFFFF">V</text>
+    <text x="146" y="186" text-anchor="start" font-family="Baloo 2, Poppins, Arial, sans-serif" font-size="66" font-weight="800" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round" fill="#FFFFFF">ET</text>
+    <rect x="124" y="138" width="16" height="48" rx="3" fill="#4C9A3F"/>
+    <line x1="124" y1="154" x2="140" y2="154" stroke="#2F6B26" stroke-width="2.5"/>
+    <line x1="124" y1="170" x2="140" y2="170" stroke="#2F6B26" stroke-width="2.5"/>
+    <path d="M140 142 q20 -13 31 -5 q-17 15 -31 5 Z" fill="#6FBF4A"/>
+    <path d="M140 150 q22 3 30 13 q-20 5 -30 -13 Z" fill="#4C9A3F"/>
+    <text x="150" y="258" text-anchor="middle" font-family="Baloo 2, Poppins, Arial, sans-serif" font-size="66" font-weight="800" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round" letter-spacing="2" fill="#FFFFFF">FOOD</text>
+    <g transform="translate(66,92) rotate(-20)">
+      <path d="M0 -40 L52 26 Q0 48 -52 26 Z" fill="#E3C08D"/>
+      <g stroke="#C9A164" stroke-width="1.8" fill="none">
+        <path d="M0 -40 L-26 31"/>
+        <path d="M0 -40 L2 37"/>
+        <path d="M0 -40 L28 31"/>
+      </g>
+      <path d="M-52 26 Q0 48 52 26" fill="none" stroke="#B08A4E" stroke-width="3"/>
+    </g>
+    <rect width="300" height="300" rx="6" fill="url(#tileGloss)"/>
+  </symbol>
+
+  <symbol id="wordmark" viewBox="0 0 340 80">
+    <text x="50" y="60" text-anchor="end" font-family="Baloo 2, Poppins, Arial, sans-serif" font-size="54" font-weight="800" paint-order="stroke" stroke="url(#sheenRed)" stroke-width="3" stroke-linejoin="round" fill="url(#sheenRed)">V</text>
+    <text x="90" y="60" text-anchor="start" font-family="Baloo 2, Poppins, Arial, sans-serif" font-size="54" font-weight="800" letter-spacing="1" paint-order="stroke" stroke="url(#sheenRed)" stroke-width="3" stroke-linejoin="round" fill="url(#sheenRed)">ET FOOD</text>
+    <rect x="57" y="22" width="14" height="38" rx="3" fill="#4C9A3F"/>
+    <line x1="57" y1="35" x2="71" y2="35" stroke="#2F6B26" stroke-width="2"/>
+    <line x1="57" y1="47" x2="71" y2="47" stroke="#2F6B26" stroke-width="2"/>
+    <path d="M71 22 q13 -12 21 -8 q-11 14 -21 8 Z" fill="#6FBF4A"/>
+  </symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="topbar-name" href="#top" aria-label="Viet Food, till toppen">
+      <span class="mark-shine mark-shine-bar"><svg class="topbar-mark" viewBox="0 0 340 80" role="img" aria-label="Viet Food"><use href="#wordmark"/></svg></span>
+    </a>
+    <nav class="topbar-nav" aria-label="Huvudmeny">
+      <a href="#meny">Meny</a>
+      <a href="#buffe">Buffé</a>
+      <a href="#oppettider">Öppettider</a>
+      <a href="#hitta">Hitta hit</a>
+    </nav>
+    <button type="button" class="cartbtn" id="cartbtn" aria-label="Visa beställning">
+      <span class="n" id="cartn" data-zero="1">0</span> Beställning
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <span class="mark-shine mark-shine-hero"><svg class="mark" viewBox="0 0 300 300" role="img" aria-label="Viet Food"><use href="#mark"/></svg></span>
+      <h1>Beställ take away eller ät buffé hela dagen</h1>
+      <p class="hero-lede">Kinesiskt, vietnamesiskt och sushi. Välj rätter nedan, skicka beställningen — så står den klar när du kommer till Spiralen.</p>
+      <p class="status" id="status" role="status">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span id="status-text">Kontrollerar öppettider</span>
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-red" href="#meny">Se menyn och beställ</a>
+        <a class="btn btn-ghost" href="#buffe">Buffé 129:-</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu" id="meny">
+    <div class="wrap">
+      <div class="menu-top">
+        <div>
+          <h2 class="band-head" style="margin:0">Meny</h2>
+          <p>Tryck på plus för att lägga rätten i din beställning. Hämtas i restaurangen.</p>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <div class="search" id="search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#4A443E" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <input type="search" id="q" placeholder="Sök rätt eller nummer, t.ex. 29a eller räkor" autocomplete="off" aria-label="Sök i menyn">
+          <button type="button" class="clear" id="qclear" aria-label="Rensa sökning">×</button>
+        </div>
+        <nav class="chips" id="chips" aria-label="Kategorier">
+<a class="chip" href="#cat-forratter" data-cat="forratter">Förrätter</a>
+<a class="chip" href="#cat-vegetariskt" data-cat="vegetariskt">Vegetariskt</a>
+<a class="chip" href="#cat-biff" data-cat="biff">Biff</a>
+<a class="chip" href="#cat-kyckling" data-cat="kyckling">Kyckling</a>
+<a class="chip" href="#cat-anka" data-cat="anka">Anka</a>
+<a class="chip" href="#cat-rakor" data-cat="rakor">Räkor och bläckfisk</a>
+<a class="chip" href="#cat-ris" data-cat="ris">Ris och nudlar</a>
+<a class="chip" href="#cat-special" data-cat="special">Specialrätter</a>
+<a class="chip" href="#cat-vietnam" data-cat="vietnam">Vietnamesiskt</a>
+<a class="chip" href="#cat-sushi-varm" data-cat="sushi-varm">Sushi — poke bowl och varmrätt</a>
+<a class="chip" href="#cat-nigiri" data-cat="nigiri">Nigiri och nigiri mix</a>
+<a class="chip" href="#cat-maki" data-cat="maki">Stora maki</a>
+<a class="chip" href="#cat-lyxmaki" data-cat="lyxmaki">Lyx maki, 8 bitar</a>
+<a class="chip" href="#cat-sushimix" data-cat="sushimix">Sushi mix</a>
+<a class="chip" href="#cat-barn" data-cat="barn">Barnrätter</a>
+<a class="chip" href="#cat-extra" data-cat="extra">Extra tillbehör</a>
+        </nav>
+      </div>
+
+      <div id="menuroot">
+<section class="cat" id="cat-forratter" data-cat="forratter">
+<h3 class="cat-h">Förrätter <span class="cat-n">10</span></h3>
+<ul class="mlist">
+<li class="mi" data-search="1 vårrulle vegetarisk finns"><span class="mi-no">1</span><span class="mi-body"><span class="mi-name">Vårrulle</span><span class="mi-desc">Vegetarisk finns</span></span><span class="mi-buy"><span class="mi-price">55:-</span><span class="ctl" data-key="forratter-0" data-name="1 Vårrulle" data-price="55"><button type="button" class="add" aria-label="Lägg till Vårrulle">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="2 tempura ebi friterade räkor"><span class="mi-no">2</span><span class="mi-body"><span class="mi-name">Tempura Ebi</span><span class="mi-desc">Friterade räkor</span></span><span class="mi-buy"><span class="mi-price">69:-</span><span class="ctl" data-key="forratter-1" data-name="2 Tempura Ebi" data-price="69"><button type="button" class="add" aria-label="Lägg till Tempura Ebi">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="3 räkchips "><span class="mi-no">3</span><span class="mi-body"><span class="mi-name">Räkchips</span></span><span class="mi-buy"><span class="mi-price">55:-</span><span class="ctl" data-key="forratter-2" data-name="3 Räkchips" data-price="55"><button type="button" class="add" aria-label="Lägg till Räkchips">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="4 pekingsoppa "><span class="mi-no">4</span><span class="mi-body"><span class="mi-name">Pekingsoppa</span></span><span class="mi-buy"><span class="mi-price">75:-</span><span class="ctl" data-key="forratter-3" data-name="4 Pekingsoppa" data-price="75"><button type="button" class="add" aria-label="Lägg till Pekingsoppa">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="5 kycklingsoppa "><span class="mi-no">5</span><span class="mi-body"><span class="mi-name">Kycklingsoppa</span></span><span class="mi-buy"><span class="mi-price">65:-</span><span class="ctl" data-key="forratter-4" data-name="5 Kycklingsoppa" data-price="65"><button type="button" class="add" aria-label="Lägg till Kycklingsoppa">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="6 saté grillspett med jordnötssås"><span class="mi-no">6</span><span class="mi-body"><span class="mi-name">Saté</span><span class="mi-desc">Grillspett med jordnötssås</span></span><span class="mi-buy"><span class="mi-price">75:-</span><span class="ctl" data-key="forratter-5" data-name="6 Saté" data-price="75"><button type="button" class="add" aria-label="Lägg till Saté">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="8 gyoza dumpling i soppa kyckling eller vegetarisk"><span class="mi-no">8</span><span class="mi-body"><span class="mi-name">Gyoza dumpling i soppa</span><span class="mi-desc">Kyckling eller vegetarisk</span></span><span class="mi-buy"><span class="mi-price">59:-</span><span class="ctl" data-key="forratter-6" data-name="8 Gyoza dumpling i soppa" data-price="59"><button type="button" class="add" aria-label="Lägg till Gyoza dumpling i soppa">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="9 friterad gyoza dumpling kyckling eller vegetarisk"><span class="mi-no">9</span><span class="mi-body"><span class="mi-name">Friterad gyoza dumpling</span><span class="mi-desc">Kyckling eller vegetarisk</span></span><span class="mi-buy"><span class="mi-price">75:-</span><span class="ctl" data-key="forratter-7" data-name="9 Friterad gyoza dumpling" data-price="75"><button type="button" class="add" aria-label="Lägg till Friterad gyoza dumpling">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="10 tom yum goong thailändsk soppa med kyckling"><span class="mi-no">10</span><span class="mi-body"><span class="mi-name">Tom Yum Goong</span><span class="mi-desc">Thailändsk soppa med kyckling</span></span><span class="mi-buy"><span class="mi-price">75:-</span><span class="ctl" data-key="forratter-8" data-name="10 Tom Yum Goong" data-price="75"><button type="button" class="add" aria-label="Lägg till Tom Yum Goong">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="11 tom yum kaeng thailändsk soppa"><span class="mi-no">11</span><span class="mi-body"><span class="mi-name">Tom Yum Kaeng</span><span class="mi-desc">Thailändsk soppa</span></span><span class="mi-buy"><span class="mi-price">75:-</span><span class="ctl" data-key="forratter-9" data-name="11 Tom Yum Kaeng" data-price="75"><button type="button" class="add" aria-label="Lägg till Tom Yum Kaeng">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+</ul></section>
+
+<section class="cat" id="cat-vegetariskt" data-cat="vegetariskt">
+<h3 class="cat-h">Vegetariskt <span class="cat-n">4</span></h3>
+<ul class="mlist">
+<li class="mi" data-search="v1 wokade grönsaker med cashewnötter "><span class="mi-no">V1</span><span class="mi-body"><span class="mi-name">Wokade grönsaker med cashewnötter</span></span><span class="mi-buy"><span class="mi-price">149:-</span><span class="ctl" data-key="vegetariskt-0" data-name="V1 Wokade grönsaker med cashewnötter" data-price="149"><button type="button" class="add" aria-label="Lägg till Wokade grönsaker med cashewnötter">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="v2 stekta äggnudlar med grönsaker "><span class="mi-no">V2</span><span class="mi-body"><span class="mi-name">Stekta äggnudlar med grönsaker</span></span><span class="mi-buy"><span class="mi-price">159:-</span><span class="ctl" data-key="vegetariskt-1" data-name="V2 Stekta äggnudlar med grönsaker" data-price="159"><button type="button" class="add" aria-label="Lägg till Stekta äggnudlar med grönsaker">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="v3 stekt ris med grönsaker och ägg "><span class="mi-no">V3</span><span class="mi-body"><span class="mi-name">Stekt ris med grönsaker och ägg</span></span><span class="mi-buy"><span class="mi-price">159:-</span><span class="ctl" data-key="vegetariskt-2" data-name="V3 Stekt ris med grönsaker och ägg" data-price="159"><button type="button" class="add" aria-label="Lägg till Stekt ris med grönsaker och ägg">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="v4 pad thai med grönsaker "><span class="mi-no">V4</span><span class="mi-body"><span class="mi-name">Pad Thai med grönsaker</span></span><span class="mi-buy"><span class="mi-price">169:-</span><span class="ctl" data-key="vegetariskt-3" data-name="V4 Pad Thai med grönsaker" data-price="169"><button type="button" class="add" aria-label="Lägg till Pad Thai med grönsaker">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+</ul></section>
+
+<section class="cat" id="cat-biff" data-cat="biff">
+<h3 class="cat-h">Biff <span class="cat-n">13</span></h3>
+<ul class="mlist">
+<li class="mi" data-search="12 wokad biff med svartpeppar och vitlök "><span class="mi-no">12</span><span class="mi-body"><span class="mi-name">Wokad biff med svartpeppar och vitlök</span></span><span class="mi-buy"><span class="mi-price">159:-</span><span class="ctl" data-key="biff-0" data-name="12 Wokad biff med svartpeppar och vitlök" data-price="159"><button type="button" class="add" aria-label="Lägg till Wokad biff med svartpeppar och vitlök">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="13 wokad biff med lök eller purjolök "><span class="mi-no">13</span><span class="mi-body"><span class="mi-name">Wokad biff med lök eller purjolök</span></span><span class="mi-buy"><span class="mi-price">159:-</span><span class="ctl" data-key="biff-1" data-name="13 Wokad biff med lök eller purjolök" data-price="159"><button type="button" class="add" aria-label="Lägg till Wokad biff med lök eller purjolök">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="14 wokad biff med teriyakisås "><span class="mi-no">14</span><span class="mi-body"><span class="mi-name">Wokad biff med teriyakisås</span></span><span class="mi-buy"><span class="mi-price">159:-</span><span class="ctl" data-key="biff-2" data-name="14 Wokad biff med teriyakisås" data-price="159"><button type="button" class="add" aria-label="Lägg till Wokad biff med teriyakisås">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="15 wokad biff med chili och basilika stark"><span class="mi-no">15</span><span class="mi-body"><span class="mi-name">Wokad biff med chili och basilika</span><span class="mi-desc">Stark</span></span><span class="mi-buy"><span class="mi-price">159:-</span><span class="ctl" data-key="biff-3" data-name="15 Wokad biff med chili och basilika" data-price="159"><button type="button" class="add" aria-label="Lägg till Wokad biff med chili och basilika">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="16 wokad biff med ananas i sötsursås "><span class="mi-no">16</span><span class="mi-body"><span class="mi-name">Wokad biff med ananas i sötsursås</span></span><span class="mi-buy"><span class="mi-price">159:-</span><span class="ctl" data-key="biff-4" data-name="16 Wokad biff med ananas i sötsursås" data-price="159"><button type="button" class="add" aria-label="Lägg till Wokad biff med ananas i sötsursås">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="17 wokad biff med bambuskott och champinjoner går även med bara bambuskott eller bara champinjoner"><span class="mi-no">17</span><span class="mi-body"><span class="mi-name">Wokad biff med bambuskott och champinjoner</span><span class="mi-desc">Går även med bara bambuskott eller bara champinjoner</span></span><span class="mi-buy"><span class="mi-price">159:-</span><span class="ctl" data-key="biff-5" data-name="17 Wokad biff med bambuskott och champinjoner" data-price="159"><button type="button" class="add" aria-label="Lägg till Wokad biff med bambuskott och champinjoner">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="18 wokad biff med blandade grönsaker "><span class="mi-no">18</span><span class="mi-body"><span class="mi-name">Wokad biff med blandade grönsaker</span></span><span class="mi-buy"><span class="mi-price">159:-</span><span class="ctl" data-key="biff-6" data-name="18 Wokad biff med blandade grönsaker" data-price="159"><button type="button" class="add" aria-label="Lägg till Wokad biff med blandade grönsaker">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="19a wokad biff på vietnamesiskt vis i barbecuesås"><span class="mi-no">19a</span><span class="mi-body"><span class="mi-name">Wokad biff på vietnamesiskt vis</span><span class="mi-desc">I barbecuesås</span></span><span class="mi-buy"><span class="mi-price">159:-</span><span class="ctl" data-key="biff-7" data-name="19a Wokad biff på vietnamesiskt vis" data-price="159"><button type="button" class="add" aria-label="Lägg till Wokad biff på vietnamesiskt vis">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="19b wokad biff med jordnötssås "><span class="mi-no">19b</span><span class="mi-body"><span class="mi-name">Wokad biff med jordnötssås</span></span><span class="mi-buy"><span class="mi-price">159:-</span><span class="ctl" data-key="biff-8" data-name="19b Wokad biff med jordnötssås" data-price="159"><button type="button" class="add" aria-label="Lägg till Wokad biff med jordnötssås">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="20a wokad biff i currysås "><span class="mi-no">20a</span><span class="mi-body"><span class="mi-name">Wokad biff i currysås</span></span><span class="mi-buy"><span class="mi-price">159:-</span><span class="ctl" data-key="biff-9" data-name="20a Wokad biff i currysås" data-price="159"><button type="button" class="add" aria-label="Lägg till Wokad biff i currysås">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="20b biff i thaicurry röd, massaman eller panang"><span class="mi-no">20b</span><span class="mi-body"><span class="mi-name">Biff i thaicurry</span><span class="mi-desc">Röd, massaman eller panang</span></span><span class="mi-buy"><span class="mi-price">159:-</span><span class="ctl" data-key="biff-10" data-name="20b Biff i thaicurry" data-price="159"><button type="button" class="add" aria-label="Lägg till Biff i thaicurry">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="20c wokad biff med chilipasta "><span class="mi-no">20c</span><span class="mi-body"><span class="mi-name">Wokad biff med chilipasta</span></span><span class="mi-buy"><span class="mi-price">159:-</span><span class="ctl" data-key="biff-11" data-name="20c Wokad biff med chilipasta" data-price="159"><button type="button" class="add" aria-label="Lägg till Wokad biff med chilipasta">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="21 wokad biff i stark kryddad sås stark"><span class="mi-no">21</span><span class="mi-body"><span class="mi-name">Wokad biff i stark kryddad sås</span><span class="mi-desc">Stark</span></span><span class="mi-buy"><span class="mi-price">159:-</span><span class="ctl" data-key="biff-12" data-name="21 Wokad biff i stark kryddad sås" data-price="159"><button type="button" class="add" aria-label="Lägg till Wokad biff i stark kryddad sås">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+</ul></section>
+
+<section class="cat" id="cat-kyckling" data-cat="kyckling">
+<h3 class="cat-h">Kyckling <span class="cat-n">15</span></h3>
+<ul class="mlist">
+<li class="mi" data-search="28 friterad kycklingfilé med sötsursås "><span class="mi-no">28</span><span class="mi-body"><span class="mi-name">Friterad kycklingfilé med sötsursås</span></span><span class="mi-buy"><span class="mi-price">149:-</span><span class="ctl" data-key="kyckling-0" data-name="28 Friterad kycklingfilé med sötsursås" data-price="149"><button type="button" class="add" aria-label="Lägg till Friterad kycklingfilé med sötsursås">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="29a wokad kycklingfilé med cashewnötter "><span class="mi-no">29a</span><span class="mi-body"><span class="mi-name">Wokad kycklingfilé med cashewnötter</span></span><span class="mi-buy"><span class="mi-price">165:-</span><span class="ctl" data-key="kyckling-1" data-name="29a Wokad kycklingfilé med cashewnötter" data-price="165"><button type="button" class="add" aria-label="Lägg till Wokad kycklingfilé med cashewnötter">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="29b wokad kycklingfilé med jordnötssås "><span class="mi-no">29b</span><span class="mi-body"><span class="mi-name">Wokad kycklingfilé med jordnötssås</span></span><span class="mi-buy"><span class="mi-price">159:-</span><span class="ctl" data-key="kyckling-2" data-name="29b Wokad kycklingfilé med jordnötssås" data-price="159"><button type="button" class="add" aria-label="Lägg till Wokad kycklingfilé med jordnötssås">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="29c wokad kycklingfilé med szechuan "><span class="mi-no">29c</span><span class="mi-body"><span class="mi-name">Wokad kycklingfilé med szechuan</span></span><span class="mi-buy"><span class="mi-price">159:-</span><span class="ctl" data-key="kyckling-3" data-name="29c Wokad kycklingfilé med szechuan" data-price="159"><button type="button" class="add" aria-label="Lägg till Wokad kycklingfilé med szechuan">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="29d wokad kycklingfilé à la szechuan "><span class="mi-no">29d</span><span class="mi-body"><span class="mi-name">Wokad kycklingfilé à la szechuan</span></span><span class="mi-buy"><span class="mi-price">159:-</span><span class="ctl" data-key="kyckling-4" data-name="29d Wokad kycklingfilé à la szechuan" data-price="159"><button type="button" class="add" aria-label="Lägg till Wokad kycklingfilé à la szechuan">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="30a wokad kycklingfilé i currysås "><span class="mi-no">30a</span><span class="mi-body"><span class="mi-name">Wokad kycklingfilé i currysås</span></span><span class="mi-buy"><span class="mi-price">149:-</span><span class="ctl" data-key="kyckling-5" data-name="30a Wokad kycklingfilé i currysås" data-price="149"><button type="button" class="add" aria-label="Lägg till Wokad kycklingfilé i currysås">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="30b kycklingfilé i thaicurry röd, panang eller massaman"><span class="mi-no">30b</span><span class="mi-body"><span class="mi-name">Kycklingfilé i thaicurry</span><span class="mi-desc">Röd, panang eller massaman</span></span><span class="mi-buy"><span class="mi-price">159:-</span><span class="ctl" data-key="kyckling-6" data-name="30b Kycklingfilé i thaicurry" data-price="159"><button type="button" class="add" aria-label="Lägg till Kycklingfilé i thaicurry">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="30c wokad kycklingfilé med svartpeppar och vitlök "><span class="mi-no">30c</span><span class="mi-body"><span class="mi-name">Wokad kycklingfilé med svartpeppar och vitlök</span></span><span class="mi-buy"><span class="mi-price">159:-</span><span class="ctl" data-key="kyckling-7" data-name="30c Wokad kycklingfilé med svartpeppar och vitlök" data-price="159"><button type="button" class="add" aria-label="Lägg till Wokad kycklingfilé med svartpeppar och vitlök">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="31a wokad kycklingfilé med ananas i sötsursås "><span class="mi-no">31a</span><span class="mi-body"><span class="mi-name">Wokad kycklingfilé med ananas i sötsursås</span></span><span class="mi-buy"><span class="mi-price">149:-</span><span class="ctl" data-key="kyckling-8" data-name="31a Wokad kycklingfilé med ananas i sötsursås" data-price="149"><button type="button" class="add" aria-label="Lägg till Wokad kycklingfilé med ananas i sötsursås">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="31b wokad kycklingfilé med teriyakisås "><span class="mi-no">31b</span><span class="mi-body"><span class="mi-name">Wokad kycklingfilé med teriyakisås</span></span><span class="mi-buy"><span class="mi-price">159:-</span><span class="ctl" data-key="kyckling-9" data-name="31b Wokad kycklingfilé med teriyakisås" data-price="159"><button type="button" class="add" aria-label="Lägg till Wokad kycklingfilé med teriyakisås">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="31c wokad kycklingfilé med chilipasta "><span class="mi-no">31c</span><span class="mi-body"><span class="mi-name">Wokad kycklingfilé med chilipasta</span></span><span class="mi-buy"><span class="mi-price">159:-</span><span class="ctl" data-key="kyckling-10" data-name="31c Wokad kycklingfilé med chilipasta" data-price="159"><button type="button" class="add" aria-label="Lägg till Wokad kycklingfilé med chilipasta">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="32a wokad kyckling med blandade grönsaker "><span class="mi-no">32a</span><span class="mi-body"><span class="mi-name">Wokad kyckling med blandade grönsaker</span></span><span class="mi-buy"><span class="mi-price">149:-</span><span class="ctl" data-key="kyckling-11" data-name="32a Wokad kyckling med blandade grönsaker" data-price="149"><button type="button" class="add" aria-label="Lägg till Wokad kyckling med blandade grönsaker">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="32b wokad kyckling teriyaki "><span class="mi-no">32b</span><span class="mi-body"><span class="mi-name">Wokad kyckling teriyaki</span></span><span class="mi-buy"><span class="mi-price">159:-</span><span class="ctl" data-key="kyckling-12" data-name="32b Wokad kyckling teriyaki" data-price="159"><button type="button" class="add" aria-label="Lägg till Wokad kyckling teriyaki">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="33 wokad kycklingfilé med bambuskott och champinjoner går även med bara bambuskott eller bara champinjoner"><span class="mi-no">33</span><span class="mi-body"><span class="mi-name">Wokad kycklingfilé med bambuskott och champinjoner</span><span class="mi-desc">Går även med bara bambuskott eller bara champinjoner</span></span><span class="mi-buy"><span class="mi-price">149:-</span><span class="ctl" data-key="kyckling-13" data-name="33 Wokad kycklingfilé med bambuskott och champinjoner" data-price="149"><button type="button" class="add" aria-label="Lägg till Wokad kycklingfilé med bambuskott och champinjoner">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="34 wokad kycklingfilé i starkt kryddad sås stark"><span class="mi-no">34</span><span class="mi-body"><span class="mi-name">Wokad kycklingfilé i starkt kryddad sås</span><span class="mi-desc">Stark</span></span><span class="mi-buy"><span class="mi-price">149:-</span><span class="ctl" data-key="kyckling-14" data-name="34 Wokad kycklingfilé i starkt kryddad sås" data-price="149"><button type="button" class="add" aria-label="Lägg till Wokad kycklingfilé i starkt kryddad sås">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+</ul></section>
+
+<section class="cat" id="cat-anka" data-cat="anka">
+<h3 class="cat-h">Anka <span class="cat-n">6</span></h3>
+<ul class="mlist">
+<li class="mi" data-search="35 bambugårdens special-anka grillad anka"><span class="mi-no">35</span><span class="mi-body"><span class="mi-name">Bambugårdens special-anka</span><span class="mi-desc">Grillad anka</span></span><span class="mi-buy"><span class="mi-price">249:-</span><span class="ctl" data-key="anka-0" data-name="35 Bambugårdens special-anka" data-price="249"><button type="button" class="add" aria-label="Lägg till Bambugårdens special-anka">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="36a grillad anka med ananas "><span class="mi-no">36a</span><span class="mi-body"><span class="mi-name">Grillad anka med ananas</span></span><span class="mi-buy"><span class="mi-price">209:-</span><span class="ctl" data-key="anka-1" data-name="36a Grillad anka med ananas" data-price="209"><button type="button" class="add" aria-label="Lägg till Grillad anka med ananas">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="36b grillad anka szechuan "><span class="mi-no">36b</span><span class="mi-body"><span class="mi-name">Grillad anka szechuan</span></span><span class="mi-buy"><span class="mi-price">219:-</span><span class="ctl" data-key="anka-2" data-name="36b Grillad anka szechuan" data-price="219"><button type="button" class="add" aria-label="Lägg till Grillad anka szechuan">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="36c grillad anka med teriyakisås "><span class="mi-no">36c</span><span class="mi-body"><span class="mi-name">Grillad anka med teriyakisås</span></span><span class="mi-buy"><span class="mi-price">219:-</span><span class="ctl" data-key="anka-3" data-name="36c Grillad anka med teriyakisås" data-price="219"><button type="button" class="add" aria-label="Lägg till Grillad anka med teriyakisås">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="37 grillad anka med champinjonsås "><span class="mi-no">37</span><span class="mi-body"><span class="mi-name">Grillad anka med champinjonsås</span></span><span class="mi-buy"><span class="mi-price">209:-</span><span class="ctl" data-key="anka-4" data-name="37 Grillad anka med champinjonsås" data-price="209"><button type="button" class="add" aria-label="Lägg till Grillad anka med champinjonsås">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="38 grillad anka med barbecuesås "><span class="mi-no">38</span><span class="mi-body"><span class="mi-name">Grillad anka med barbecuesås</span></span><span class="mi-buy"><span class="mi-price">229:-</span><span class="ctl" data-key="anka-5" data-name="38 Grillad anka med barbecuesås" data-price="229"><button type="button" class="add" aria-label="Lägg till Grillad anka med barbecuesås">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+</ul></section>
+
+<section class="cat" id="cat-rakor" data-cat="rakor">
+<h3 class="cat-h">Räkor och bläckfisk <span class="cat-n">14</span></h3>
+<ul class="mlist">
+<li class="mi" data-search="39 friterade räkor med sötsursås "><span class="mi-no">39</span><span class="mi-body"><span class="mi-name">Friterade räkor med sötsursås</span></span><span class="mi-buy"><span class="mi-price">169:-</span><span class="ctl" data-key="rakor-0" data-name="39 Friterade räkor med sötsursås" data-price="169"><button type="button" class="add" aria-label="Lägg till Friterade räkor med sötsursås">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="40a wokade räkor i currysås "><span class="mi-no">40a</span><span class="mi-body"><span class="mi-name">Wokade räkor i currysås</span></span><span class="mi-buy"><span class="mi-price">169:-</span><span class="ctl" data-key="rakor-1" data-name="40a Wokade räkor i currysås" data-price="169"><button type="button" class="add" aria-label="Lägg till Wokade räkor i currysås">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="40b räkor i thaicurry röd, panang eller massaman"><span class="mi-no">40b</span><span class="mi-body"><span class="mi-name">Räkor i thaicurry</span><span class="mi-desc">Röd, panang eller massaman</span></span><span class="mi-buy"><span class="mi-price">179:-</span><span class="ctl" data-key="rakor-2" data-name="40b Räkor i thaicurry" data-price="179"><button type="button" class="add" aria-label="Lägg till Räkor i thaicurry">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="40c hot wokade jätteräkor "><span class="mi-no">40c</span><span class="mi-body"><span class="mi-name">Hot wokade jätteräkor</span></span><span class="mi-buy"><span class="mi-price">229:-</span><span class="ctl" data-key="rakor-3" data-name="40c Hot wokade jätteräkor" data-price="229"><button type="button" class="add" aria-label="Lägg till Hot wokade jätteräkor">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="41a wokade räkor i starkt kryddad sås stark"><span class="mi-no">41a</span><span class="mi-body"><span class="mi-name">Wokade räkor i starkt kryddad sås</span><span class="mi-desc">Stark</span></span><span class="mi-buy"><span class="mi-price">179:-</span><span class="ctl" data-key="rakor-4" data-name="41a Wokade räkor i starkt kryddad sås" data-price="179"><button type="button" class="add" aria-label="Lägg till Wokade räkor i starkt kryddad sås">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="41b wokade räkor med szechuan "><span class="mi-no">41b</span><span class="mi-body"><span class="mi-name">Wokade räkor med szechuan</span></span><span class="mi-buy"><span class="mi-price">179:-</span><span class="ctl" data-key="rakor-5" data-name="41b Wokade räkor med szechuan" data-price="179"><button type="button" class="add" aria-label="Lägg till Wokade räkor med szechuan">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="41c wokade räkor à la szechuan "><span class="mi-no">41c</span><span class="mi-body"><span class="mi-name">Wokade räkor à la szechuan</span></span><span class="mi-buy"><span class="mi-price">179:-</span><span class="ctl" data-key="rakor-6" data-name="41c Wokade räkor à la szechuan" data-price="179"><button type="button" class="add" aria-label="Lägg till Wokade räkor à la szechuan">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="42 wokade räkor med bambuskott och champinjoner går även med bara bambuskott eller bara champinjoner"><span class="mi-no">42</span><span class="mi-body"><span class="mi-name">Wokade räkor med bambuskott och champinjoner</span><span class="mi-desc">Går även med bara bambuskott eller bara champinjoner</span></span><span class="mi-buy"><span class="mi-price">169:-</span><span class="ctl" data-key="rakor-7" data-name="42 Wokade räkor med bambuskott och champinjoner" data-price="169"><button type="button" class="add" aria-label="Lägg till Wokade räkor med bambuskott och champinjoner">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="43a wokade räkor med blandade grönsaker "><span class="mi-no">43a</span><span class="mi-body"><span class="mi-name">Wokade räkor med blandade grönsaker</span></span><span class="mi-buy"><span class="mi-price">179:-</span><span class="ctl" data-key="rakor-8" data-name="43a Wokade räkor med blandade grönsaker" data-price="179"><button type="button" class="add" aria-label="Lägg till Wokade räkor med blandade grönsaker">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="43b wokade räkor med cashewnötter och grönsaker "><span class="mi-no">43b</span><span class="mi-body"><span class="mi-name">Wokade räkor med cashewnötter och grönsaker</span></span><span class="mi-buy"><span class="mi-price">185:-</span><span class="ctl" data-key="rakor-9" data-name="43b Wokade räkor med cashewnötter och grönsaker" data-price="185"><button type="button" class="add" aria-label="Lägg till Wokade räkor med cashewnötter och grönsaker">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="44 wokade räkor med teriyakisås "><span class="mi-no">44</span><span class="mi-body"><span class="mi-name">Wokade räkor med teriyakisås</span></span><span class="mi-buy"><span class="mi-price">179:-</span><span class="ctl" data-key="rakor-10" data-name="44 Wokade räkor med teriyakisås" data-price="179"><button type="button" class="add" aria-label="Lägg till Wokade räkor med teriyakisås">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="45 wokad bläckfisk teriyaki "><span class="mi-no">45</span><span class="mi-body"><span class="mi-name">Wokad bläckfisk teriyaki</span></span><span class="mi-buy"><span class="mi-price">159:-</span><span class="ctl" data-key="rakor-11" data-name="45 Wokad bläckfisk teriyaki" data-price="159"><button type="button" class="add" aria-label="Lägg till Wokad bläckfisk teriyaki">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="46 wokad bläckfisk med szechuan "><span class="mi-no">46</span><span class="mi-body"><span class="mi-name">Wokad bläckfisk med szechuan</span></span><span class="mi-buy"><span class="mi-price">159:-</span><span class="ctl" data-key="rakor-12" data-name="46 Wokad bläckfisk med szechuan" data-price="159"><button type="button" class="add" aria-label="Lägg till Wokad bläckfisk med szechuan">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="47 wokad bläckfisk med blandade grönsaker "><span class="mi-no">47</span><span class="mi-body"><span class="mi-name">Wokad bläckfisk med blandade grönsaker</span></span><span class="mi-buy"><span class="mi-price">149:-</span><span class="ctl" data-key="rakor-13" data-name="47 Wokad bläckfisk med blandade grönsaker" data-price="149"><button type="button" class="add" aria-label="Lägg till Wokad bläckfisk med blandade grönsaker">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+</ul></section>
+
+<section class="cat" id="cat-ris" data-cat="ris">
+<h3 class="cat-h">Ris och nudlar <span class="cat-n">8</span></h3>
+<ul class="mlist">
+<li class="mi" data-search="50 chop suey de luxe wokade grönsaker med biff, kyckling och räkor"><span class="mi-no">50</span><span class="mi-body"><span class="mi-name">Chop suey de luxe</span><span class="mi-desc">Wokade grönsaker med biff, kyckling och räkor</span></span><span class="mi-buy"><span class="mi-price">179:-</span><span class="ctl" data-key="ris-0" data-name="50 Chop suey de luxe" data-price="179"><button type="button" class="add" aria-label="Lägg till Chop suey de luxe">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="51a pad thai med räkor "><span class="mi-no">51a</span><span class="mi-body"><span class="mi-name">Pad Thai med räkor</span></span><span class="mi-buy"><span class="mi-price">189:-</span><span class="ctl" data-key="ris-1" data-name="51a Pad Thai med räkor" data-price="189"><button type="button" class="add" aria-label="Lägg till Pad Thai med räkor">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="51b pad thai med kyckling, biff eller fläsk "><span class="mi-no">51b</span><span class="mi-body"><span class="mi-name">Pad Thai med kyckling, biff eller fläsk</span></span><span class="mi-buy"><span class="mi-price">169:-</span><span class="ctl" data-key="ris-2" data-name="51b Pad Thai med kyckling, biff eller fläsk" data-price="169"><button type="button" class="add" aria-label="Lägg till Pad Thai med kyckling, biff eller fläsk">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="52a stekt ris special biff, kyckling, räkor och ägg"><span class="mi-no">52a</span><span class="mi-body"><span class="mi-name">Stekt ris special</span><span class="mi-desc">Biff, kyckling, räkor och ägg</span></span><span class="mi-buy"><span class="mi-price">169:-</span><span class="ctl" data-key="ris-3" data-name="52a Stekt ris special" data-price="169"><button type="button" class="add" aria-label="Lägg till Stekt ris special">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="52b stekt ris med biff och ägg "><span class="mi-no">52b</span><span class="mi-body"><span class="mi-name">Stekt ris med biff och ägg</span></span><span class="mi-buy"><span class="mi-price">159:-</span><span class="ctl" data-key="ris-4" data-name="52b Stekt ris med biff och ägg" data-price="159"><button type="button" class="add" aria-label="Lägg till Stekt ris med biff och ägg">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="52c stekt ris med kycklingfilé och ägg "><span class="mi-no">52c</span><span class="mi-body"><span class="mi-name">Stekt ris med kycklingfilé och ägg</span></span><span class="mi-buy"><span class="mi-price">159:-</span><span class="ctl" data-key="ris-5" data-name="52c Stekt ris med kycklingfilé och ägg" data-price="159"><button type="button" class="add" aria-label="Lägg till Stekt ris med kycklingfilé och ägg">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="52d stekt ris med räkor och ägg "><span class="mi-no">52d</span><span class="mi-body"><span class="mi-name">Stekt ris med räkor och ägg</span></span><span class="mi-buy"><span class="mi-price">169:-</span><span class="ctl" data-key="ris-6" data-name="52d Stekt ris med räkor och ägg" data-price="169"><button type="button" class="add" aria-label="Lägg till Stekt ris med räkor och ägg">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="54 nasi goreng indonesiskt stekt ris med räkor"><span class="mi-no">54</span><span class="mi-body"><span class="mi-name">Nasi Goreng</span><span class="mi-desc">Indonesiskt stekt ris med räkor</span></span><span class="mi-buy"><span class="mi-price">189:-</span><span class="ctl" data-key="ris-7" data-name="54 Nasi Goreng" data-price="189"><button type="button" class="add" aria-label="Lägg till Nasi Goreng">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+</ul></section>
+
+<section class="cat" id="cat-special" data-cat="special">
+<h3 class="cat-h">Specialrätter <span class="cat-n">7</span></h3>
+<ul class="mlist">
+<li class="mi" data-search="53a fyra små rätter friterade räkor, kyckling med sötsursås, stekt biff med champinjoner och bambuskott, kycklingfilé i currysås"><span class="mi-no">53a</span><span class="mi-body"><span class="mi-name">Fyra små rätter</span><span class="mi-desc">Friterade räkor, kyckling med sötsursås, stekt biff med champinjoner och bambuskott, kycklingfilé i currysås</span></span><span class="mi-buy"><span class="mi-price">189:-</span><span class="ctl" data-key="special-0" data-name="53a Fyra små rätter" data-price="189"><button type="button" class="add" aria-label="Lägg till Fyra små rätter">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="53c tre små rätter friterade räkor, kyckling med sötsursås, stekt biff med champinjoner och bambuskott"><span class="mi-no">53c</span><span class="mi-body"><span class="mi-name">Tre små rätter</span><span class="mi-desc">Friterade räkor, kyckling med sötsursås, stekt biff med champinjoner och bambuskott</span></span><span class="mi-buy"><span class="mi-price">175:-</span><span class="ctl" data-key="special-1" data-name="53c Tre små rätter" data-price="175"><button type="button" class="add" aria-label="Lägg till Tre små rätter">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="55 bambugårdens specialgryta wokad oxfilé i skivor med stark ostronsoja"><span class="mi-no">55</span><span class="mi-body"><span class="mi-name">Bambugårdens specialgryta</span><span class="mi-desc">Wokad oxfilé i skivor med stark ostronsoja</span></span><span class="mi-buy"><span class="mi-price">205:-</span><span class="ctl" data-key="special-2" data-name="55 Bambugårdens specialgryta" data-price="205"><button type="button" class="add" aria-label="Lägg till Bambugårdens specialgryta">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="56a wokad oxfilé på kinesiskt vis "><span class="mi-no">56a</span><span class="mi-body"><span class="mi-name">Wokad oxfilé på kinesiskt vis</span></span><span class="mi-buy"><span class="mi-price">199:-</span><span class="ctl" data-key="special-3" data-name="56a Wokad oxfilé på kinesiskt vis" data-price="199"><button type="button" class="add" aria-label="Lägg till Wokad oxfilé på kinesiskt vis">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="56b wokad oxfilé på vietnamesiskt vis oxfilé i skivor med specialstark sås"><span class="mi-no">56b</span><span class="mi-body"><span class="mi-name">Wokad oxfilé på vietnamesiskt vis</span><span class="mi-desc">Oxfilé i skivor med specialstark sås</span></span><span class="mi-buy"><span class="mi-price">199:-</span><span class="ctl" data-key="special-4" data-name="56b Wokad oxfilé på vietnamesiskt vis" data-price="199"><button type="button" class="add" aria-label="Lägg till Wokad oxfilé på vietnamesiskt vis">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="57a wokad fläskfilé på kinesiskt vis "><span class="mi-no">57a</span><span class="mi-body"><span class="mi-name">Wokad fläskfilé på kinesiskt vis</span></span><span class="mi-buy"><span class="mi-price">189:-</span><span class="ctl" data-key="special-5" data-name="57a Wokad fläskfilé på kinesiskt vis" data-price="189"><button type="button" class="add" aria-label="Lägg till Wokad fläskfilé på kinesiskt vis">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="57b wokad fläskfilé på vietnamesiskt vis fläskfilé i skivor med barbecuesås"><span class="mi-no">57b</span><span class="mi-body"><span class="mi-name">Wokad fläskfilé på vietnamesiskt vis</span><span class="mi-desc">Fläskfilé i skivor med barbecuesås</span></span><span class="mi-buy"><span class="mi-price">189:-</span><span class="ctl" data-key="special-6" data-name="57b Wokad fläskfilé på vietnamesiskt vis" data-price="189"><button type="button" class="add" aria-label="Lägg till Wokad fläskfilé på vietnamesiskt vis">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+</ul></section>
+
+<section class="cat" id="cat-vietnam" data-cat="vietnam">
+<h3 class="cat-h">Vietnamesiskt <span class="cat-n">6</span></h3>
+<ul class="mlist">
+<li class="mi" data-search="59b kycklinggrillspett med jordnötssås och ris "><span class="mi-no">59b</span><span class="mi-body"><span class="mi-name">Kycklinggrillspett med jordnötssås och ris</span></span><span class="mi-buy"><span class="mi-price">179:-</span><span class="ctl" data-key="vietnam-0" data-name="59b Kycklinggrillspett med jordnötssås och ris" data-price="179"><button type="button" class="add" aria-label="Lägg till Kycklinggrillspett med jordnötssås och ris">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="62b räkgrillspett med jordnötssås och ris "><span class="mi-no">62b</span><span class="mi-body"><span class="mi-name">Räkgrillspett med jordnötssås och ris</span></span><span class="mi-buy"><span class="mi-price">209:-</span><span class="ctl" data-key="vietnam-1" data-name="62b Räkgrillspett med jordnötssås och ris" data-price="209"><button type="button" class="add" aria-label="Lägg till Räkgrillspett med jordnötssås och ris">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="64a vietnamspecial stekta äggnudlar med biff, kyckling, räkor och grönsaker"><span class="mi-no">64a</span><span class="mi-body"><span class="mi-name">Vietnamspecial</span><span class="mi-desc">Stekta äggnudlar med biff, kyckling, räkor och grönsaker</span></span><span class="mi-buy"><span class="mi-price">189:-</span><span class="ctl" data-key="vietnam-2" data-name="64a Vietnamspecial" data-price="189"><button type="button" class="add" aria-label="Lägg till Vietnamspecial">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="64b stekta äggnudlar med biff och grönsaker "><span class="mi-no">64b</span><span class="mi-body"><span class="mi-name">Stekta äggnudlar med biff och grönsaker</span></span><span class="mi-buy"><span class="mi-price">169:-</span><span class="ctl" data-key="vietnam-3" data-name="64b Stekta äggnudlar med biff och grönsaker" data-price="169"><button type="button" class="add" aria-label="Lägg till Stekta äggnudlar med biff och grönsaker">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="64c stekta äggnudlar med kyckling och grönsaker "><span class="mi-no">64c</span><span class="mi-body"><span class="mi-name">Stekta äggnudlar med kyckling och grönsaker</span></span><span class="mi-buy"><span class="mi-price">169:-</span><span class="ctl" data-key="vietnam-4" data-name="64c Stekta äggnudlar med kyckling och grönsaker" data-price="169"><button type="button" class="add" aria-label="Lägg till Stekta äggnudlar med kyckling och grönsaker">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="64d stekta äggnudlar med räkor och grönsaker "><span class="mi-no">64d</span><span class="mi-body"><span class="mi-name">Stekta äggnudlar med räkor och grönsaker</span></span><span class="mi-buy"><span class="mi-price">199:-</span><span class="ctl" data-key="vietnam-5" data-name="64d Stekta äggnudlar med räkor och grönsaker" data-price="199"><button type="button" class="add" aria-label="Lägg till Stekta äggnudlar med räkor och grönsaker">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+</ul></section>
+
+<section class="cat" id="cat-sushi-varm" data-cat="sushi-varm">
+<h3 class="cat-h">Sushi — poke bowl och varmrätt <span class="cat-n">4</span></h3>
+<ul class="mlist">
+<li class="mi" data-search=" poke bowl sesamris, sallad, plommontomat, picklad morot och rättika, edamame, rårivna rödbetor. välj kyckling, biff, lax, räkor eller vegetarisk"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Poke bowl</span><span class="mi-desc">Sesamris, sallad, plommontomat, picklad morot och rättika, edamame, rårivna rödbetor. Välj kyckling, biff, lax, räkor eller vegetarisk</span></span><span class="mi-buy"><span class="mi-price">150:-</span><span class="ctl" data-key="sushi-varm-0" data-name="Poke bowl" data-price="150"><button type="button" class="add" aria-label="Lägg till Poke bowl">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search=" yakitori fyra kycklingspett, ris och sallad med teriyakisås"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Yakitori</span><span class="mi-desc">Fyra kycklingspett, ris och sallad med teriyakisås</span></span><span class="mi-buy"><span class="mi-price">150:-</span><span class="ctl" data-key="sushi-varm-1" data-name="Yakitori" data-price="150"><button type="button" class="add" aria-label="Lägg till Yakitori">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search=" yakiniku 150 g strimlat nötkött, ris och sallad med teriyakisås"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Yakiniku</span><span class="mi-desc">150 g strimlat nötkött, ris och sallad med teriyakisås</span></span><span class="mi-buy"><span class="mi-price">150:-</span><span class="ctl" data-key="sushi-varm-2" data-name="Yakiniku" data-price="150"><button type="button" class="add" aria-label="Lägg till Yakiniku">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search=" tempura ebi med ris sex pankofriterade räkor, ris och sallad med chilimajonnäs"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Tempura Ebi med ris</span><span class="mi-desc">Sex pankofriterade räkor, ris och sallad med chilimajonnäs</span></span><span class="mi-buy"><span class="mi-price">160:-</span><span class="ctl" data-key="sushi-varm-3" data-name="Tempura Ebi med ris" data-price="160"><button type="button" class="add" aria-label="Lägg till Tempura Ebi med ris">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+</ul></section>
+
+<section class="cat" id="cat-nigiri" data-cat="nigiri">
+<h3 class="cat-h">Nigiri och nigiri mix <span class="cat-n">7</span></h3>
+<ul class="mlist">
+<li class="mi" data-search=" nigiri, per bit lax, räka, krabbstick, avokado, wakame, bläckfisk, hälleflundra, mussla, inari, omelett, tonfisk eller halstrad lax — ange sort"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Nigiri, per bit</span><span class="mi-desc">Lax, räka, krabbstick, avokado, wakame, bläckfisk, hälleflundra, mussla, inari, omelett, tonfisk eller halstrad lax — ange sort</span></span><span class="mi-buy"><span class="mi-price">20:-</span><span class="ctl" data-key="nigiri-0" data-name="Nigiri, per bit" data-price="20"><button type="button" class="add" aria-label="Lägg till Nigiri, per bit">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search=" alaska sex bitar lax"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Alaska</span><span class="mi-desc">Sex bitar lax</span></span><span class="mi-buy mi-vars"><button type="button" class="vbtn" data-key="nigiri-1-0" data-name="Alaska" data-variant="utan halstrad lax" data-price="115">utan halstrad lax <b>115:-</b><i class="vq" hidden></i></button><button type="button" class="vbtn" data-key="nigiri-1-1" data-name="Alaska" data-variant="med halstrad lax" data-price="125">med halstrad lax <b>125:-</b><i class="vq" hidden></i></button></span></li>
+<li class="mi" data-search=" narita åtta bitar: fyra lax och fyra räkor, eller fyra lax och fyra avokado"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Narita</span><span class="mi-desc">Åtta bitar: fyra lax och fyra räkor, eller fyra lax och fyra avokado</span></span><span class="mi-buy mi-vars"><button type="button" class="vbtn" data-key="nigiri-2-0" data-name="Narita" data-variant="utan halstrad lax" data-price="140">utan halstrad lax <b>140:-</b><i class="vq" hidden></i></button><button type="button" class="vbtn" data-key="nigiri-2-1" data-name="Narita" data-variant="med halstrad lax" data-price="150">med halstrad lax <b>150:-</b><i class="vq" hidden></i></button></span></li>
+<li class="mi" data-search=" maguro tio bitar: lax, räka, tonfisk, hälleflundra och avokado"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Maguro</span><span class="mi-desc">Tio bitar: lax, räka, tonfisk, hälleflundra och avokado</span></span><span class="mi-buy mi-vars"><button type="button" class="vbtn" data-key="nigiri-3-0" data-name="Maguro" data-variant="utan halstrad lax" data-price="160">utan halstrad lax <b>160:-</b><i class="vq" hidden></i></button><button type="button" class="vbtn" data-key="nigiri-3-1" data-name="Maguro" data-variant="med halstrad lax" data-price="175">med halstrad lax <b>175:-</b><i class="vq" hidden></i></button></span></li>
+<li class="mi" data-search=" sumo tio bitar halstrad lax"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Sumo</span><span class="mi-desc">Tio bitar halstrad lax</span></span><span class="mi-buy"><span class="mi-price">175:-</span><span class="ctl" data-key="nigiri-4" data-name="Sumo" data-price="175"><button type="button" class="add" aria-label="Lägg till Sumo">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search=" delux tolv bitar: fyra lax, fyra räkor, två tonfisk, mussla, bläckfisk"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Delux</span><span class="mi-desc">Tolv bitar: fyra lax, fyra räkor, två tonfisk, mussla, bläckfisk</span></span><span class="mi-buy mi-vars"><button type="button" class="vbtn" data-key="nigiri-5-0" data-name="Delux" data-variant="utan halstrad lax" data-price="180">utan halstrad lax <b>180:-</b><i class="vq" hidden></i></button><button type="button" class="vbtn" data-key="nigiri-5-1" data-name="Delux" data-variant="med halstrad lax" data-price="190">med halstrad lax <b>190:-</b><i class="vq" hidden></i></button></span></li>
+<li class="mi" data-search=" samuraj mix femton bitar: fem lax, fem räkor, fem halstrad lax med teriyakisås"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Samuraj mix</span><span class="mi-desc">Femton bitar: fem lax, fem räkor, fem halstrad lax med teriyakisås</span></span><span class="mi-buy mi-vars"><button type="button" class="vbtn" data-key="nigiri-6-0" data-name="Samuraj mix" data-variant="utan halstrad lax" data-price="215">utan halstrad lax <b>215:-</b><i class="vq" hidden></i></button><button type="button" class="vbtn" data-key="nigiri-6-1" data-name="Samuraj mix" data-variant="med halstrad lax" data-price="230">med halstrad lax <b>230:-</b><i class="vq" hidden></i></button></span></li>
+</ul></section>
+
+<section class="cat" id="cat-maki" data-cat="maki">
+<h3 class="cat-h">Stora maki <span class="cat-n">9</span></h3>
+<ul class="mlist">
+<li class="mi" data-search=" kyckling maki grillad kyckling, gurka, avokado, teriyakisås, sesamfrö"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Kyckling maki</span><span class="mi-desc">Grillad kyckling, gurka, avokado, teriyakisås, sesamfrö</span></span><span class="mi-buy mi-vars"><button type="button" class="vbtn" data-key="maki-0-0" data-name="Kyckling maki" data-variant="4 bitar" data-price="80">4 bitar <b>80:-</b><i class="vq" hidden></i></button><button type="button" class="vbtn" data-key="maki-0-1" data-name="Kyckling maki" data-variant="8 bitar" data-price="150">8 bitar <b>150:-</b><i class="vq" hidden></i></button></span></li>
+<li class="mi" data-search=" sake maki friterad lax, avokado, färskost, gurka, krabbstick, purjolök, japanskt ströbröd"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Sake maki</span><span class="mi-desc">Friterad lax, avokado, färskost, gurka, krabbstick, purjolök, japanskt ströbröd</span></span><span class="mi-buy mi-vars"><button type="button" class="vbtn" data-key="maki-1-0" data-name="Sake maki" data-variant="4 bitar" data-price="80">4 bitar <b>80:-</b><i class="vq" hidden></i></button><button type="button" class="vbtn" data-key="maki-1-1" data-name="Sake maki" data-variant="8 bitar" data-price="150">8 bitar <b>150:-</b><i class="vq" hidden></i></button></span></li>
+<li class="mi" data-search=" spicy maki friterad spicy lax, avokado, färskost, gurka, purjolök, chilimajonnäs"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Spicy maki</span><span class="mi-desc">Friterad spicy lax, avokado, färskost, gurka, purjolök, chilimajonnäs</span></span><span class="mi-buy mi-vars"><button type="button" class="vbtn" data-key="maki-2-0" data-name="Spicy maki" data-variant="4 bitar" data-price="80">4 bitar <b>80:-</b><i class="vq" hidden></i></button><button type="button" class="vbtn" data-key="maki-2-1" data-name="Spicy maki" data-variant="8 bitar" data-price="150">8 bitar <b>150:-</b><i class="vq" hidden></i></button></span></li>
+<li class="mi" data-search=" crab maki krabbröra, gurka, avokado, purjolök, gräslök, löjrom, chilimajonnäs"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Crab maki</span><span class="mi-desc">Krabbröra, gurka, avokado, purjolök, gräslök, löjrom, chilimajonnäs</span></span><span class="mi-buy mi-vars"><button type="button" class="vbtn" data-key="maki-3-0" data-name="Crab maki" data-variant="4 bitar" data-price="80">4 bitar <b>80:-</b><i class="vq" hidden></i></button><button type="button" class="vbtn" data-key="maki-3-1" data-name="Crab maki" data-variant="8 bitar" data-price="150">8 bitar <b>150:-</b><i class="vq" hidden></i></button></span></li>
+<li class="mi" data-search=" räkröra maki räkröra, gurka, avokado, purjolök, majonnäs, gräslök, löjrom"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Räkröra maki</span><span class="mi-desc">Räkröra, gurka, avokado, purjolök, majonnäs, gräslök, löjrom</span></span><span class="mi-buy mi-vars"><button type="button" class="vbtn" data-key="maki-4-0" data-name="Räkröra maki" data-variant="4 bitar" data-price="80">4 bitar <b>80:-</b><i class="vq" hidden></i></button><button type="button" class="vbtn" data-key="maki-4-1" data-name="Räkröra maki" data-variant="8 bitar" data-price="150">8 bitar <b>150:-</b><i class="vq" hidden></i></button></span></li>
+<li class="mi" data-search=" philadelphia maki färskost, gurka, avokado, lax, purjolök"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Philadelphia maki</span><span class="mi-desc">Färskost, gurka, avokado, lax, purjolök</span></span><span class="mi-buy mi-vars"><button type="button" class="vbtn" data-key="maki-5-0" data-name="Philadelphia maki" data-variant="4 bitar" data-price="80">4 bitar <b>80:-</b><i class="vq" hidden></i></button><button type="button" class="vbtn" data-key="maki-5-1" data-name="Philadelphia maki" data-variant="8 bitar" data-price="150">8 bitar <b>150:-</b><i class="vq" hidden></i></button></span></li>
+<li class="mi" data-search=" california maki lax, gurka, avokado, krabbstick, sesamfrön"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">California maki</span><span class="mi-desc">Lax, gurka, avokado, krabbstick, sesamfrön</span></span><span class="mi-buy mi-vars"><button type="button" class="vbtn" data-key="maki-6-0" data-name="California maki" data-variant="4 bitar" data-price="80">4 bitar <b>80:-</b><i class="vq" hidden></i></button><button type="button" class="vbtn" data-key="maki-6-1" data-name="California maki" data-variant="8 bitar" data-price="150">8 bitar <b>150:-</b><i class="vq" hidden></i></button></span></li>
+<li class="mi" data-search=" mamma maki räkor, omelett, gurka, avokado"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Mamma maki</span><span class="mi-desc">Räkor, omelett, gurka, avokado</span></span><span class="mi-buy mi-vars"><button type="button" class="vbtn" data-key="maki-7-0" data-name="Mamma maki" data-variant="4 bitar" data-price="80">4 bitar <b>80:-</b><i class="vq" hidden></i></button><button type="button" class="vbtn" data-key="maki-7-1" data-name="Mamma maki" data-variant="8 bitar" data-price="150">8 bitar <b>150:-</b><i class="vq" hidden></i></button></span></li>
+<li class="mi" data-search=" veggi maki gurka, avokado, morötter, majonnäs"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Veggi maki</span><span class="mi-desc">Gurka, avokado, morötter, majonnäs</span></span><span class="mi-buy mi-vars"><button type="button" class="vbtn" data-key="maki-8-0" data-name="Veggi maki" data-variant="4 bitar" data-price="80">4 bitar <b>80:-</b><i class="vq" hidden></i></button><button type="button" class="vbtn" data-key="maki-8-1" data-name="Veggi maki" data-variant="8 bitar" data-price="150">8 bitar <b>150:-</b><i class="vq" hidden></i></button></span></li>
+</ul></section>
+
+<section class="cat" id="cat-lyxmaki" data-cat="lyxmaki">
+<h3 class="cat-h">Lyx maki, 8 bitar <span class="cat-n">6</span></h3>
+<ul class="mlist">
+<li class="mi" data-search=" husets maki friterad kyckling, gurka, färskost, toppad med avokado, chilimajonnäs, teriyakisås och rostad lök"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Husets maki</span><span class="mi-desc">Friterad kyckling, gurka, färskost, toppad med avokado, chilimajonnäs, teriyakisås och rostad lök</span></span><span class="mi-buy"><span class="mi-price">160:-</span><span class="ctl" data-key="lyxmaki-0" data-name="Husets maki" data-price="160"><button type="button" class="add" aria-label="Lägg till Husets maki">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search=" ebi maki friterade räkor, gurka, färskost, toppad med avokado, chilimajonnäs, gräslök, löjrom"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Ebi maki</span><span class="mi-desc">Friterade räkor, gurka, färskost, toppad med avokado, chilimajonnäs, gräslök, löjrom</span></span><span class="mi-buy"><span class="mi-price">160:-</span><span class="ctl" data-key="lyxmaki-1" data-name="Ebi maki" data-price="160"><button type="button" class="add" aria-label="Lägg till Ebi maki">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search=" arata maki krabbröra, gurka, avokado, färskost, toppad med lax och chilimajonnäs"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Arata maki</span><span class="mi-desc">Krabbröra, gurka, avokado, färskost, toppad med lax och chilimajonnäs</span></span><span class="mi-buy"><span class="mi-price">160:-</span><span class="ctl" data-key="lyxmaki-2" data-name="Arata maki" data-price="160"><button type="button" class="add" aria-label="Lägg till Arata maki">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search=" dragon maki friterad spicy lax, gurka, avokado, färskost, purjolök, toppad med halstrad lax, chilimajonnäs, teriyakisås, gräslök, löjrom"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Dragon maki</span><span class="mi-desc">Friterad spicy lax, gurka, avokado, färskost, purjolök, toppad med halstrad lax, chilimajonnäs, teriyakisås, gräslök, löjrom</span></span><span class="mi-buy"><span class="mi-price">160:-</span><span class="ctl" data-key="lyxmaki-3" data-name="Dragon maki" data-price="160"><button type="button" class="add" aria-label="Lägg till Dragon maki">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search=" rainbow maki räkröra, gurka, avokado, färskost, toppad med lax, tonfisk, avokado, majonnäs, gräslök, löjrom"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Rainbow maki</span><span class="mi-desc">Räkröra, gurka, avokado, färskost, toppad med lax, tonfisk, avokado, majonnäs, gräslök, löjrom</span></span><span class="mi-buy"><span class="mi-price">160:-</span><span class="ctl" data-key="lyxmaki-4" data-name="Rainbow maki" data-price="160"><button type="button" class="add" aria-label="Lägg till Rainbow maki">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search=" veggi lyx maki omelettröra, gurka, färskost, japanskt ströbröd, toppad med avokado, majonnäs, rostad lök"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Veggi lyx maki</span><span class="mi-desc">Omelettröra, gurka, färskost, japanskt ströbröd, toppad med avokado, majonnäs, rostad lök</span></span><span class="mi-buy"><span class="mi-price">160:-</span><span class="ctl" data-key="lyxmaki-5" data-name="Veggi lyx maki" data-price="160"><button type="button" class="add" aria-label="Lägg till Veggi lyx maki">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+</ul></section>
+
+<section class="cat" id="cat-sushimix" data-cat="sushimix">
+<h3 class="cat-h">Sushi mix <span class="cat-n">5</span></h3>
+<ul class="mlist">
+<li class="mi" data-search=" liten mix åtta bitar: två lax, räka, omelett och fyra maki, kockens val"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Liten mix</span><span class="mi-desc">Åtta bitar: två lax, räka, omelett och fyra maki, kockens val</span></span><span class="mi-buy"><span class="mi-price">120:-</span><span class="ctl" data-key="sushimix-0" data-name="Liten mix" data-price="120"><button type="button" class="add" aria-label="Lägg till Liten mix">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search=" tokyo mix tolv bitar: två lax, räka, tonfisk, avokado, fyra california maki och tre små maki"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Tokyo mix</span><span class="mi-desc">Tolv bitar: två lax, räka, tonfisk, avokado, fyra california maki och tre små maki</span></span><span class="mi-buy"><span class="mi-price">145:-</span><span class="ctl" data-key="sushimix-1" data-name="Tokyo mix" data-price="145"><button type="button" class="add" aria-label="Lägg till Tokyo mix">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search=" mamma mix tolv bitar: räka, avokado, omelett, krabbstick, tofu, fyra mamma maki och tre små maki"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Mamma mix</span><span class="mi-desc">Tolv bitar: räka, avokado, omelett, krabbstick, tofu, fyra mamma maki och tre små maki</span></span><span class="mi-buy"><span class="mi-price">145:-</span><span class="ctl" data-key="sushimix-2" data-name="Mamma mix" data-price="145"><button type="button" class="add" aria-label="Lägg till Mamma mix">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search=" veggi mix tolv bitar: två avokado, omelett, tofu, wakame, fyra veggi maki och tre små maki"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Veggi mix</span><span class="mi-desc">Tolv bitar: två avokado, omelett, tofu, wakame, fyra veggi maki och tre små maki</span></span><span class="mi-buy"><span class="mi-price">145:-</span><span class="ctl" data-key="sushimix-3" data-name="Veggi mix" data-price="145"><button type="button" class="add" aria-label="Lägg till Veggi mix">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search=" taruna mix sexton bitar: tre lax, två räkor, tonfisk, hälleflundra, mussla, krabbstick, fyra maki och tre små maki"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Taruna mix</span><span class="mi-desc">Sexton bitar: tre lax, två räkor, tonfisk, hälleflundra, mussla, krabbstick, fyra maki och tre små maki</span></span><span class="mi-buy"><span class="mi-price">185:-</span><span class="ctl" data-key="sushimix-4" data-name="Taruna mix" data-price="185"><button type="button" class="add" aria-label="Lägg till Taruna mix">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+</ul></section>
+
+<section class="cat" id="cat-barn" data-cat="barn">
+<h3 class="cat-h">Barnrätter <span class="cat-n">3</span></h3>
+<ul class="mlist">
+<li class="mi" data-search="77 köttbullar med pommes "><span class="mi-no">77</span><span class="mi-body"><span class="mi-name">Köttbullar med pommes</span></span><span class="mi-buy"><span class="mi-price">109:-</span><span class="ctl" data-key="barn-0" data-name="77 Köttbullar med pommes" data-price="109"><button type="button" class="add" aria-label="Lägg till Köttbullar med pommes">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search="78 chicken nuggets med pommes "><span class="mi-no">78</span><span class="mi-body"><span class="mi-name">Chicken nuggets med pommes</span></span><span class="mi-buy"><span class="mi-price">119:-</span><span class="ctl" data-key="barn-1" data-name="78 Chicken nuggets med pommes" data-price="119"><button type="button" class="add" aria-label="Lägg till Chicken nuggets med pommes">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search=" barnportion av övriga rätter 70 procent av ordinarie pris — skriv rättens nummer i meddelandet"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Barnportion av övriga rätter</span><span class="mi-desc">70 procent av ordinarie pris — skriv rättens nummer i meddelandet</span></span><span class="mi-buy"><span class="mi-price mi-info">70 %</span></span></li>
+</ul></section>
+
+<section class="cat" id="cat-extra" data-cat="extra">
+<h3 class="cat-h">Extra tillbehör <span class="cat-n">9</span></h3>
+<ul class="mlist">
+<li class="mi" data-search=" extra cashewnötter "><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Extra cashewnötter</span></span><span class="mi-buy"><span class="mi-price">15:-</span><span class="ctl" data-key="extra-0" data-name="Extra cashewnötter" data-price="15"><button type="button" class="add" aria-label="Lägg till Extra cashewnötter">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search=" extra ris per portion"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Extra ris</span><span class="mi-desc">Per portion</span></span><span class="mi-buy"><span class="mi-price">35:-</span><span class="ctl" data-key="extra-1" data-name="Extra ris" data-price="35"><button type="button" class="add" aria-label="Lägg till Extra ris">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search=" extra stekt ris per portion"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Extra stekt ris</span><span class="mi-desc">Per portion</span></span><span class="mi-buy"><span class="mi-price">75:-</span><span class="ctl" data-key="extra-2" data-name="Extra stekt ris" data-price="75"><button type="button" class="add" aria-label="Lägg till Extra stekt ris">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search=" extra stekta nudlar per portion"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Extra stekta nudlar</span><span class="mi-desc">Per portion</span></span><span class="mi-buy"><span class="mi-price">75:-</span><span class="ctl" data-key="extra-3" data-name="Extra stekta nudlar" data-price="75"><button type="button" class="add" aria-label="Lägg till Extra stekta nudlar">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search=" byt till stekt ris eller nudlar per portion"><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Byt till stekt ris eller nudlar</span><span class="mi-desc">Per portion</span></span><span class="mi-buy"><span class="mi-price">59:-</span><span class="ctl" data-key="extra-4" data-name="Byt till stekt ris eller nudlar" data-price="59"><button type="button" class="add" aria-label="Lägg till Byt till stekt ris eller nudlar">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search=" extra sås "><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Extra sås</span></span><span class="mi-buy"><span class="mi-price">19:-</span><span class="ctl" data-key="extra-5" data-name="Extra sås" data-price="19"><button type="button" class="add" aria-label="Lägg till Extra sås">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search=" extra jordnötssås "><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Extra jordnötssås</span></span><span class="mi-buy"><span class="mi-price">35:-</span><span class="ctl" data-key="extra-6" data-name="Extra jordnötssås" data-price="35"><button type="button" class="add" aria-label="Lägg till Extra jordnötssås">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search=" extra chilimajonnäs "><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Extra chilimajonnäs</span></span><span class="mi-buy"><span class="mi-price">15:-</span><span class="ctl" data-key="extra-7" data-name="Extra chilimajonnäs" data-price="15"><button type="button" class="add" aria-label="Lägg till Extra chilimajonnäs">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+<li class="mi" data-search=" extra wakame "><span class="mi-no"></span><span class="mi-body"><span class="mi-name">Extra wakame</span></span><span class="mi-buy"><span class="mi-price">30:-</span><span class="ctl" data-key="extra-8" data-name="Extra wakame" data-price="30"><button type="button" class="add" aria-label="Lägg till Extra wakame">+</button><span class="stp" hidden><button type="button" class="dec" aria-label="Ta bort en">−</button><b class="q">0</b><button type="button" class="inc" aria-label="Lägg till en">+</button></span></span></span></li>
+</ul></section>
+      </div>
+      <p class="no-hits" id="nohits">Inga rätter matchar sökningen.</p>
+
+      <p class="small-note">Fullständiga rättigheter. Vi tar kort och Swish. Fråga gärna om allergier och önskad styrka — köket anpassar rätterna.</p>
+    </div>
+  </section>
+
+  <section class="band band-sand" id="buffe">
+    <div class="wrap">
+      <h2 class="band-head">Buffé på plats, 129:-</h2>
+      <p class="lede measure">Ingen lunchtid att passa och inga tillägg i kassan. Buffén står framme från att vi öppnar tills vi stänger.</p>
+
+      <div class="incl">
+        <div class="card incl-cell">
+          <span class="incl-num">01</span>
+          <h3>Varmrätter</h3>
+          <p>Wokade rätter, curry, friterat och nudlar. Byts ut under dagen.</p>
+        </div>
+        <div class="card incl-cell">
+          <span class="incl-num">02</span>
+          <h3>Sushi</h3>
+          <p>Nigiri och maki, rullade på plats under dagen.</p>
+        </div>
+        <div class="card incl-cell">
+          <span class="incl-num">03</span>
+          <h3>Dimsum</h3>
+          <p>Ångade och friterade dumplings direkt ur korgen.</p>
+        </div>
+        <div class="card incl-cell">
+          <span class="incl-num">04</span>
+          <h3>Salladsbuffé</h3>
+          <p>Färska grönsaker, pickles och dressingar.</p>
+        </div>
+        <div class="card incl-cell">
+          <span class="incl-num">05</span>
+          <h3>Kaffe och te</h3>
+          <p>Så mycket du vill, under hela besöket.</p>
+        </div>
+        <div class="card incl-cell">
+          <span class="incl-num">06</span>
+          <h3>Glass och kaka</h3>
+          <p>Efterrätt ingår — inget extra att betala.</p>
+        </div>
+      </div>
+
+      <div class="price-grid">
+        <div class="card price-card is-red"><span class="price-label">Buffé</span><span class="price-value">129:-</span><span class="price-sub">Vuxen, hela dagen</span></div>
+        <div class="card price-card"><span class="price-label">Pensionär</span><span class="price-value">115:-</span><span class="price-sub">Alla dagar i veckan</span></div>
+        <div class="card price-card"><span class="price-label">Barn 6–11 år</span><span class="price-value">89:-</span><span class="price-sub">Samma buffé</span></div>
+        <div class="card price-card"><span class="price-label">Barn 1–5 år</span><span class="price-value">59:-</span><span class="price-sub">Samma buffé</span></div>
+      </div>
+
+      <div class="ta-grid">
+        <div class="card ta-card is-dark">
+          <span class="ta-price">99:-</span>
+          <h3>Buffé take away</h3>
+          <p>En låda att fylla själv från buffén. Samma mat, samma pris hela dagen.</p>
+        </div>
+        <div class="card ta-card is-red">
+          <span class="ta-price">999:-</span>
+          <h3>Kupongkort</h3>
+          <p>Tio buffé take away på ett kort. Köp det i kassan och använd när du vill.</p>
+          <span class="ta-old">Ordinarie pris 1 190:-</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap two-col">
+      <div>
+        <h2 class="band-head" id="oppettider">Öppettider</h2>
+        <p class="lede measure">Vi följer Spiralens öppettider. Buffén serveras under hela öppettiden.</p>
+        <p class="small-note">Avvikande öppettider vid helgdagar.</p>
+      </div>
+      <table class="hours">
+        <thead><tr><th scope="col">Dag</th><th scope="col">Tid</th></tr></thead>
+        <tbody>
+          <tr data-days="1,2,3,4,5"><td>Måndag – fredag</td><td>10.00 – 19.00</td></tr>
+          <tr data-days="6"><td>Lördag</td><td>10.00 – 17.00</td></tr>
+          <tr data-days="0"><td>Söndag</td><td>12.00 – 16.00</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="band band-sand" id="hitta">
+    <div class="wrap two-col">
+      <div>
+        <h2 class="band-head">Hitta hit</h2>
+        <p class="lede measure">Vi ligger inne i köpcentrumet Spiralen i centrala Norrköping, på entréplan.</p>
+      </div>
+      <div class="find-card">
+        <h3>Viet Food Spiralen</h3>
+        <address>
+          Hantverkaregatan 22<br>
+          602 32 Norrköping<br>
+          <a href="tel:+46709190150">0709 190 150</a><br>
+          <a href="mailto:vietfood.sverige@gmail.com">vietfood.sverige@gmail.com</a>
+        </address>
+        <ul class="find-list">
+          <li>Entréplan i Spiralen</li>
+          <li>Parkering i Spiralens garage</li>
+          <li>Fullständiga rättigheter</li>
+          <li>Kort och Swish</li>
+        </ul>
+        <a class="btn btn-red" href="https://maps.google.com/?q=Hantverkaregatan+22,+602+32+Norrk%C3%B6ping">Öppna i kartan</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="mark-shine mark-shine-foot"><svg class="mark" viewBox="0 0 300 300" role="img" aria-label="Viet Food"><use href="#mark"/></svg></span>
+        <p>Kinesiskt, vietnamesiskt och sushi. Asiatisk buffé hela dagen, mitt i Spiralen.</p>
+      </div>
+      <div>
+        <h2 class="foot-h">Beställ och boka</h2>
+        <a class="foot-call" href="tel:+46709190150">0709 190 150</a>
+        <ul class="foot-list">
+          <li>Ring före, så står maten klar</li>
+          <li><a href="mailto:vietfood.sverige@gmail.com">vietfood.sverige@gmail.com</a></li>
+          <li>Catering och sällskap på förfrågan</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Hitta hit</h2>
+        <ul class="foot-list">
+          <li>Spiralen, entréplan</li>
+          <li>Hantverkaregatan 22</li>
+          <li>602 32 Norrköping</li>
+          <li><a href="https://maps.google.com/?q=Hantverkaregatan+22,+602+32+Norrk%C3%B6ping">Vägbeskrivning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Öppettider</h2>
+        <ul class="foot-list foot-hours">
+          <li><span>Mån – fre</span><span>10.00 – 19.00</span></li>
+          <li><span>Lördag</span><span>10.00 – 17.00</span></li>
+          <li><span>Söndag</span><span>12.00 – 16.00</span></li>
+        </ul>
+        <ul class="foot-list" style="margin-top:12px">
+          <li>Fullständiga rättigheter</li>
+          <li>Kort och Swish</li>
+          <li>Avvikande tider vid helgdagar</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">© <span id="year">2026</span> Viet Food Spiralen, Hantverkaregatan 22, 602 32 Norrköping</div>
+  </div>
+</footer>
+
+<!-- order bar -->
+<div class="obar" id="obar" aria-live="polite">
+  <div class="obar-in">
+    <div class="obar-sum"><span id="obar-t">0:-</span><small id="obar-n">0 rätter</small></div>
+    <button type="button" class="btn btn-red" id="obar-open">Visa beställning</button>
+  </div>
+</div>
+
+<!-- order sheet -->
+<div class="sheet-bg" id="sheetbg"></div>
+<aside class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+  <div class="sheet-h">
+    <h2 id="sheet-title">Din beställning</h2>
+    <button type="button" class="sheet-x" id="sheet-x" aria-label="Stäng">×</button>
+  </div>
+  <div class="sheet-body" id="sheet-body">
+    <ul class="olist" id="olist"></ul>
+    <p class="oempty" id="oempty">Inget valt ännu. Tryck på plus vid en rätt i menyn.</p>
+    <div class="total" id="ototal-wrap"><span>Totalt <small>betalas vid hämtning</small></span><span id="ototal">0:-</span></div>
+
+    <form class="oform" id="oform" novalidate>
+      <div class="row">
+        <div><label for="f-name">Namn</label><input id="f-name" type="text" autocomplete="name" required></div>
+        <div><label for="f-tel">Mobilnummer</label><input id="f-tel" type="tel" autocomplete="tel" inputmode="tel" required></div>
+      </div>
+      <div><label for="f-mail">E-post <small style="font-weight:400;color:#4A443E">— du får en kopia av beställningen</small></label><input id="f-mail" type="email" autocomplete="email" inputmode="email" required></div>
+      <div><label for="f-time">Hämtas</label><select id="f-time"><option value="asap">Så snart som möjligt</option></select></div>
+      <div><label for="f-note">Meddelande till köket</label><textarea id="f-note" placeholder="Allergier, styrka, barnportion …"></textarea></div>
+      <p class="oerr" id="oerr">Fyll i namn, mobilnummer och en giltig e-postadress.</p>
+      <div class="oacts">
+        <button type="submit" class="btn btn-red" id="send">Skicka beställning</button>
+        <p class="ohint" id="alt-hint" style="margin:4px 0 0">Går det inte att skicka? <a href="#" id="alt-sms">Skicka via SMS</a> eller <a href="#" id="alt-copy">kopiera beställningen</a>.</p>
+        <p class="copied" id="copied">Kopierat — klistra in i valfri app.</p>
+      </div>
+      <p class="ohint">Vi bekräftar per SMS eller e-post. Betalning vid hämtning med kort eller Swish. Ring <a href="tel:+46709190150">0709 190 150</a> om du hellre beställer muntligt.</p>
+    </form>
+  </div>
+
+  <div class="sheet-body odone" id="odone" hidden>
+    <div class="odone-mark" aria-hidden="true">✓</div>
+    <h3>Tack, <span id="done-name"></span>!</h3>
+    <p class="odone-no">Beställning <b id="done-id"></b></p>
+    <p id="done-text">Vi har tagit emot din beställning och skickat en kopia till <b id="done-mail"></b>. Vi hör av oss om något är oklart.</p>
+    <div class="odone-sum" id="done-sum"></div>
+    <div class="oacts">
+      <button type="button" class="btn btn-ghost" id="done-new">Ny beställning</button>
+    </div>
+  </div>
+</aside>
+
+<script>
+(function(){
+  'use strict';
+  /* ======== INSTÄLLNINGAR ========
+     ENDPOINT: webbapp-URL från Google Apps Script (se Code.gs).
+     Tom = demo-läge: kunden skickar själv från sin e-postapp, med kopia till sig. */
+  var CONFIG = {
+    ENDPOINT: 'https://script.google.com/macros/s/AKfycbxWokWJtuAsxyiUNgK5d0S8cPkWS_6oTH1mUp5fDoHU9NrBYf3reYz2nqWW3E0UC4KAYA/exec',
+    PHONE: '+46709190150',
+    MAIL: 'vietfood.sverige@gmail.com'
+  };
+  var PHONE = CONFIG.PHONE, MAIL = CONFIG.MAIL;
+  var HOURS = {0:[12,16],1:[10,19],2:[10,19],3:[10,19],4:[10,19],5:[10,19],6:[10,17]};
+  var DAY_INDEX = {Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+  var $ = function(id){ return document.getElementById(id); };
+
+  try{ if (matchMedia('(prefers-reduced-motion: reduce)').matches){
+    Array.prototype.forEach.call(document.querySelectorAll('svg'), function(s){ if (s.pauseAnimations) s.pauseAnimations(); });
+  } }catch(e){}
+
+  /* ---------- opening status ---------- */
+  function stockholmNow(){
+    var parts = new Intl.DateTimeFormat('en-US',{timeZone:'Europe/Stockholm',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+    var o = {}; parts.forEach(function(p){ o[p.type] = p.value; });
+    return { day: DAY_INDEX[o.weekday], minutes: (parseInt(o.hour,10)%24)*60 + parseInt(o.minute,10) };
+  }
+  function hm(m){ var h = Math.floor(m/60), mm = m%60; return h + '.' + (mm<10?'0':'') + mm; }
+  var now = stockholmNow(), today = HOURS[now.day], open = today[0]*60, close = today[1]*60, isOpen = now.minutes>=open && now.minutes<close;
+  $('year').textContent = new Date().getFullYear();
+  var st = $('status'), stt = $('status-text');
+  if (isOpen){ st.className='status is-open'; stt.textContent = (close-now.minutes)<=60 ? 'Öppet — stänger '+hm(close) : 'Öppet nu, till '+hm(close); }
+  else { st.className='status is-closed'; var nd = now.minutes<open ? now.day : (now.day+1)%7; stt.textContent = 'Stängt just nu — öppnar '+(now.minutes<open?'i dag':'i morgon')+' '+hm(HOURS[nd][0]*60); }
+  Array.prototype.forEach.call(document.querySelectorAll('.hours tbody tr'), function(r){
+    if (r.getAttribute('data-days').split(',').indexOf(String(now.day))!==-1) r.className='is-today';
+  });
+
+  /* pickup slots for today, from 30 min ahead, every 15 min */
+  var sel = $('f-time');
+  if (isOpen){
+    var first = Math.max(open+30, Math.ceil((now.minutes+30)/15)*15);
+    for (var t=first; t<=close-15; t+=15){ var o=document.createElement('option'); o.value=hm(t); o.textContent='I dag '+hm(t); sel.appendChild(o); }
+  } else {
+    sel.options[0].textContent = 'Vi har stängt nu — vi återkommer med tid';
+  }
+
+  /* ---------- cart ---------- */
+  var cart = {};   // key -> {name, variant, price, qty}
+  function count(){ var n=0; for (var k in cart) n+=cart[k].qty; return n; }
+  function total(){ var s=0; for (var k in cart) s+=cart[k].qty*cart[k].price; return s; }
+  function kr(n){ return n + ':-'; }
+
+  function setQty(key, name, variant, price, qty){
+    var note = cart[key] ? cart[key].note : '';
+    if (qty<=0) delete cart[key]; else cart[key] = {name:name, variant:variant, price:price, qty:qty, note:note};
+    render();
+  }
+  function qtyOf(key){ return cart[key] ? cart[key].qty : 0; }
+
+  function render(){
+    var n = count(), t = total();
+    $('cartn').textContent = n; $('cartn').setAttribute('data-zero', n?'0':'1');
+    $('obar').className = 'obar' + (n ? ' is-on' : '');
+    $('obar-t').textContent = kr(t);
+    $('obar-n').textContent = n + (n===1 ? ' rätt' : ' rätter');
+    /* menu controls */
+    Array.prototype.forEach.call(document.querySelectorAll('.ctl'), function(c){
+      var q = qtyOf(c.getAttribute('data-key'));
+      c.querySelector('.add').hidden = q>0;
+      c.querySelector('.stp').hidden = q===0;
+      c.querySelector('.q').textContent = q;
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('.vbtn'), function(b){
+      var q = qtyOf(b.getAttribute('data-key')), vq = b.querySelector('.vq');
+      b.className = 'vbtn' + (q?' has':''); vq.hidden = !q; vq.textContent = '×'+q;
+    });
+    /* sheet list */
+    var ul = $('olist'); ul.innerHTML = '';
+    var keys = Object.keys(cart);
+    $('oempty').style.display = keys.length ? 'none' : 'block';
+    $('ototal-wrap').style.display = keys.length ? 'flex' : 'none';
+    $('oform').style.display = keys.length ? 'grid' : 'none';
+    keys.forEach(function(k){
+      var it = cart[k], li = document.createElement('li');
+      li.innerHTML = '<span class="oname">'+esc(it.name)+(it.variant?'<span class="ovar">'+esc(it.variant)+'</span>':'')+'</span>'
+        + '<span class="osum">'+kr(it.qty*it.price)+'</span>'
+        + '<span class="oline"><span class="stp"><button type="button" class="dec" data-k="'+k+'" aria-label="Ta bort en">−</button><b class="q">'+it.qty+'</b><button type="button" class="inc" data-k="'+k+'" aria-label="Lägg till en">+</button></span><span style="font-size:13px;color:#4A443E">'+kr(it.price)+' / st</span></span>'
+        + '<span class="onote"><input type="text" data-k="'+k+'" value="'+esc(it.note||'')+'" placeholder="Önskemål för rätten, t.ex. utan lök, extra stark" aria-label="Önskemål för '+esc(it.name)+'"></span>';
+      ul.appendChild(li);
+    });
+    $('ototal').textContent = kr(t);
+  }
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+  /* menu clicks (delegated) */
+  $('menuroot').addEventListener('click', function(ev){
+    var b = ev.target.closest('button'); if (!b) return;
+    if (b.classList.contains('vbtn')){
+      var k=b.getAttribute('data-key'); setQty(k, b.getAttribute('data-name'), b.getAttribute('data-variant'), +b.getAttribute('data-price'), qtyOf(k)+1); return;
+    }
+    var c = b.closest('.ctl'); if (!c) return;
+    var key=c.getAttribute('data-key'), name=c.getAttribute('data-name'), price=+c.getAttribute('data-price'), q=qtyOf(key);
+    if (b.classList.contains('add')||b.classList.contains('inc')) setQty(key,name,'',price,q+1);
+    else if (b.classList.contains('dec')) setQty(key,name,'',price,q-1);
+  });
+  /* sheet clicks */
+  $('olist').addEventListener('click', function(ev){
+    var b = ev.target.closest('button'); if (!b) return;
+    var k=b.getAttribute('data-k'), it=cart[k]; if (!it) return;
+    setQty(k, it.name, it.variant, it.price, it.qty + (b.classList.contains('inc')?1:-1));
+  });
+
+  $('olist').addEventListener('input', function(ev){
+    var i = ev.target; if (i.tagName!=='INPUT') return;
+    var it = cart[i.getAttribute('data-k')]; if (it) it.note = i.value;
+  });
+
+  /* ---------- sheet open/close ---------- */
+  function openSheet(){ $('sheet').className='sheet is-on'; $('sheetbg').className='sheet-bg is-on'; document.body.style.overflow='hidden'; }
+  function closeSheet(){ $('sheet').className='sheet'; $('sheetbg').className='sheet-bg'; document.body.style.overflow=''; }
+  $('cartbtn').addEventListener('click', openSheet);
+  $('obar-open').addEventListener('click', openSheet);
+  $('sheet-x').addEventListener('click', closeSheet);
+  $('sheetbg').addEventListener('click', closeSheet);
+  document.addEventListener('keydown', function(e){ if (e.key==='Escape') closeSheet(); });
+
+  /* ---------- compose + send ---------- */
+  function field(id){ return $(id).value.trim(); }
+  function orderId(){ return 'VF-' + Date.now().toString(36).slice(-4).toUpperCase(); }
+  function itemsText(){
+    var out = [];
+    for (var k in cart){ var it=cart[k];
+      out.push(it.qty+' × '+it.name+(it.variant?' ('+it.variant+')':'')+' – '+kr(it.qty*it.price));
+      if (it.note) out.push('   ↳ '+it.note);
+    }
+    return out;
+  }
+  function compose(id){
+    var time=$('f-time'), tlabel=time.options[time.selectedIndex].textContent, note=field('f-note');
+    var lines = ['Beställning '+id+' – Viet Food Spiralen', 'Namn: '+field('f-name'), 'Mobil: '+field('f-tel'), 'E-post: '+field('f-mail'), 'Hämtas: '+tlabel, ''];
+    lines = lines.concat(itemsText());
+    lines.push('', 'Totalt: '+kr(total())+' (betalas vid hämtning)');
+    if (note) lines.push('', 'Meddelande: '+note);
+    return lines.join('\n');
+  }
+  function payload(id){
+    var time=$('f-time'), items=[];
+    for (var k in cart){ var it=cart[k]; items.push({name:it.name, variant:it.variant||'', qty:it.qty, price:it.price, note:it.note||''}); }
+    return { id:id, name:field('f-name'), phone:field('f-tel'), email:field('f-mail'),
+             pickup:time.options[time.selectedIndex].textContent, note:field('f-note'),
+             items:items, total:total(), text:compose(id) };
+  }
+  function valid(){
+    var mail = field('f-mail');
+    var ok = field('f-name') && field('f-tel') && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail);
+    $('oerr').className = 'oerr' + (ok?'':' is-on');
+    if (!ok) (field('f-name') ? (field('f-tel') ? $('f-mail') : $('f-tel')) : $('f-name')).focus();
+    return !!ok;
+  }
+  function showDone(id){
+    $('done-name').textContent = field('f-name');
+    $('done-id').textContent = id;
+    $('done-mail').textContent = field('f-mail');
+    $('done-sum').textContent = itemsText().join('\n') + '\n\nTotalt ' + kr(total()) + ' · Hämtas: ' + $('f-time').options[$('f-time').selectedIndex].textContent;
+    $('sheet-body').hidden = true; $('odone').hidden = false;
+    $('odone').scrollTop = 0;
+  }
+  $('oform').addEventListener('submit', function(ev){
+    ev.preventDefault();
+    if (!valid()) return;
+    var id = orderId(), btn = $('send');
+    if (CONFIG.ENDPOINT){
+      btn.disabled = true; btn.textContent = 'Skickar …';
+      /* text/plain-body: ingen CORS-preflight, vilket Apps Script kräver */
+      fetch(CONFIG.ENDPOINT, {method:'POST', body:JSON.stringify(payload(id))})
+        .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function(d){ if (d && d.error) throw new Error(d.error); showDone(d && d.id ? d.id : id); })
+        .catch(function(){
+          btn.disabled = false; btn.textContent = 'Skicka beställning';
+          $('oerr').textContent = 'Det gick inte att skicka just nu. Prova SMS-länken nedan eller ring oss.';
+          $('oerr').className = 'oerr is-on';
+        });
+    } else {
+      /* demo-läge: kundens egen e-postapp skickar, med kopia (cc) till kunden själv */
+      var subj = 'Beställning ' + id + ' – ' + field('f-name');
+      location.href = 'mailto:' + MAIL + '?cc=' + encodeURIComponent(field('f-mail'))
+        + '&subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(compose(id));
+      setTimeout(function(){ showDone(id); }, 900);
+    }
+  });
+  $('alt-sms').addEventListener('click', function(e){
+    e.preventDefault(); if (!valid()) return;
+    location.href = 'sms:' + PHONE + '?&body=' + encodeURIComponent(compose(orderId()));
+  });
+  $('alt-copy').addEventListener('click', function(e){
+    e.preventDefault();
+    var txt = compose(orderId()), done = function(){ $('copied').className='copied is-on'; setTimeout(function(){ $('copied').className='copied'; }, 2500); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(done, done);
+    else { var ta=document.createElement('textarea'); ta.value=txt; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(er){} document.body.removeChild(ta); done(); }
+  });
+  $('done-new').addEventListener('click', function(){
+    cart = {}; render();
+    $('odone').hidden = true; $('sheet-body').hidden = false;
+    closeSheet();
+  });
+
+  /* ---------- search ---------- */
+  var q=$('q'), wrap=$('search');
+  function filter(){
+    var v = q.value.trim().toLowerCase();
+    wrap.className = 'search' + (v?' has':'');
+    var any = false;
+    Array.prototype.forEach.call(document.querySelectorAll('.cat'), function(cat){
+      var hits = 0;
+      Array.prototype.forEach.call(cat.querySelectorAll('.mi'), function(li){
+        var hit = !v || li.getAttribute('data-search').indexOf(v)!==-1;
+        li.className = 'mi' + (hit?'':' is-hidden'); if (hit) hits++;
+      });
+      cat.className = 'cat' + (hits?'':' is-hidden'); if (hits) any = true;
+      var chip = document.querySelector('.chip[data-cat="'+cat.getAttribute('data-cat')+'"]'); if (chip) chip.style.display = hits?'':'none';
+    });
+    $('nohits').className = 'no-hits' + (any?'':' is-on');
+  }
+  q.addEventListener('input', filter);
+  $('qclear').addEventListener('click', function(){ q.value=''; filter(); q.focus(); });
+
+  /* ---------- chip scroll-spy ---------- */
+  var chips = document.querySelectorAll('.chip');
+  function setChip(slug){
+    Array.prototype.forEach.call(chips, function(c){
+      var on = c.getAttribute('data-cat')===slug; c.className='chip'+(on?' is-on':'');
+      if (on && c.scrollIntoView) c.scrollIntoView({block:'nearest', inline:'center', behavior:'smooth'});
+    });
+  }
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if (en.isIntersecting) setChip(en.target.getAttribute('data-cat')); });
+    }, {rootMargin:'-140px 0px -70% 0px', threshold:0});
+    Array.prototype.forEach.call(document.querySelectorAll('.cat'), function(c){ io.observe(c); });
+  }
+
+  render();
+})();
+</script>
+</body>
+</html>

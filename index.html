@@ -9,7 +9,7 @@
 <meta name="description" content="Beställ take away från Viet Food i Spiralen, Norrköping. Kinesiskt, vietnamesiskt och sushi. Asiatisk buffé 129:- hela dagen.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Baloo+2:wght@600;700;800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Jost:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#0B181C;
@@ -28,15 +28,17 @@
   --red-dark:#C8102E;
   --white:#FFFFFF;
   --wrap:1080px;--bar:62px;
-  --display:"Poppins","Helvetica Neue",Arial,sans-serif;
-  --body:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --display:"Playfair Display",Georgia,"Times New Roman",serif;
+  --body:"Jost","Helvetica Neue",Arial,sans-serif;
+  --eyebrow:.22em;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:calc(var(--bar) + 64px);background:var(--bg)}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;overflow:auto!important}*{animation:none!important;transition:none!important}.splash{display:none!important}}
-body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;padding-bottom:84px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:17px;font-weight:300;line-height:1.72;-webkit-font-smoothing:antialiased;padding-bottom:84px}
 ::selection{background:var(--gold);color:#08171A}
-h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.08;margin:0;letter-spacing:-0.01em}
+h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.12;margin:0;letter-spacing:0}
+h1 em,h2 em,h3 em,.em{font-style:italic;font-weight:400}
 p{margin:0 0 1rem}
 a{color:inherit}
 button{font-family:inherit}
@@ -69,14 +71,14 @@ button{font-family:inherit}
 .splash-line{display:block;width:0;height:1.5px;background:linear-gradient(90deg,rgba(201,169,106,0),#C9A96A,rgba(201,169,106,0));animation:splashLine 1.8s cubic-bezier(.2,.8,.3,1) 1.6s forwards}
 @keyframes splashLine{to{width:min(340px,74vw)}}
 .splash-hello{
-  font-family:var(--display);font-weight:700;line-height:1.08;
+  font-family:var(--display);font-weight:400;line-height:1.14;
   font-size:clamp(1.75rem,6.4vw,2.9rem);
   background:linear-gradient(100deg,#8C7440 0%,#C9A96A 22%,#F5E7C4 44%,#E0CB96 54%,#C9A96A 70%,#8C7440 100%);
   background-size:260% 100%;-webkit-background-clip:text;background-clip:text;
   color:#C9A96A;-webkit-text-fill-color:transparent;
   opacity:0;animation:splashIn 1.4s cubic-bezier(.2,.8,.3,1) 1.05s forwards, goldSweep 9s ease-in-out 1.05s infinite;
 }
-.splash-txt{font-size:clamp(15px,4.2vw,20px);font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,169,106,.9);opacity:0;animation:splashIn 1.3s ease 2.15s forwards}
+.splash-txt{font-family:var(--body);font-size:clamp(13px,3.6vw,16px);font-weight:400;letter-spacing:var(--eyebrow);text-transform:uppercase;color:rgba(201,169,106,.9);opacity:0;animation:splashIn 1.3s ease 2.15s forwards}
 
 /* ---------- ánh sáng gương ---------- */
 @keyframes sheenPass{0%{transform:translate3d(-70%,0,0) rotate(9deg);opacity:0}9%{opacity:.5}30%{opacity:.5}42%{transform:translate3d(200%,0,0) rotate(9deg);opacity:0}100%{transform:translate3d(200%,0,0) rotate(9deg);opacity:0}}
@@ -119,10 +121,10 @@ button{font-family:inherit}
 .topbar-name{display:flex;align-items:center;color:var(--red);text-decoration:none}
 .topbar-mark{width:100%;height:auto;display:block}
 .topbar-nav{display:flex;gap:22px;font-size:14px;margin-left:auto}
-.topbar-nav a{text-decoration:none;color:var(--text-soft);padding:4px 0;border-bottom:2px solid transparent}
+.topbar-nav a{text-decoration:none;color:var(--text-soft);font-size:11.5px;text-transform:uppercase;letter-spacing:.16em;padding:4px 0;border-bottom:1px solid transparent}
 .topbar-nav a:hover{color:var(--gold);border-bottom-color:var(--gold)}
 @media (max-width:760px){.topbar-nav{display:none}}
-.cartbtn{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 14px 0 12px;border:1.5px solid var(--line);border-radius:999px;background:transparent;color:var(--text);font-size:14px;font-weight:600;cursor:pointer;transition:border-color .2s,color .2s}
+.cartbtn{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px 0 12px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--text);font-size:11.5px;font-weight:400;text-transform:uppercase;letter-spacing:.14em;cursor:pointer;transition:border-color .2s,color .2s}
 .cartbtn:hover{border-color:var(--gold);color:var(--gold)}
 .cartbtn .n{min-width:22px;height:22px;border-radius:999px;background:var(--red);color:#fff;font-size:12px;display:inline-flex;align-items:center;justify-content:center;padding:0 6px}
 .cartbtn .n[data-zero="1"]{background:rgba(230,236,230,.16);color:var(--text-soft)}
@@ -133,7 +135,8 @@ button{font-family:inherit}
 .hero>*{position:relative}
 .hero-grid{display:grid;grid-template-columns:1fr;gap:30px;justify-items:center;text-align:center}
 .hero-txt{max-width:44ch}
-.hero h1{font-size:clamp(2.3rem,8vw,3.8rem);margin:0 auto;line-height:1.02}
+.eyebrow{font-family:var(--body);font-size:11.5px;font-weight:400;text-transform:uppercase;letter-spacing:var(--eyebrow);color:var(--gold);margin:0 0 16px}
+.hero h1{font-size:clamp(2.4rem,8.4vw,4rem);margin:0 auto;line-height:1.06;font-weight:400}
 .hero-lede{margin:18px auto 0;color:var(--text-soft);font-size:1.12rem}
 @media (min-width:900px){
   .hero{padding:56px 0 64px}
@@ -154,7 +157,7 @@ button{font-family:inherit}
 .status.is-open .status-dot{background:#3FC77B;box-shadow:0 0 10px rgba(63,199,123,.8)}
 .status.is-closed .status-dot{background:var(--red)}
 .hero-actions{margin-top:22px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.btn{display:inline-block;padding:14px 24px;border-radius:6px;font-size:15px;font-weight:600;text-decoration:none;border:2px solid transparent;cursor:pointer;line-height:1.2;transition:background .2s,color .2s,border-color .2s}
+.btn{display:inline-block;padding:15px 26px;border-radius:2px;font-family:var(--body);font-size:12.5px;font-weight:500;text-transform:uppercase;letter-spacing:var(--eyebrow);text-decoration:none;border:1px solid transparent;cursor:pointer;line-height:1.2;transition:background .2s,color .2s,border-color .2s}
 .btn-red{background:var(--red);color:var(--white)}
 .btn-red:hover{background:#F03A52}
 .btn-ghost{border-color:var(--line);color:var(--text);background:transparent}
@@ -226,7 +229,7 @@ button{font-family:inherit}
   transition:border-color .2s,background .2s,transform .2s;
 }
 .choice:hover{border-color:var(--gold);background:var(--surface-2);transform:translateY(-2px)}
-.choice-t{display:block;font-family:var(--display);font-weight:700;font-size:1.02rem;margin-bottom:3px}
+.choice-t{display:block;font-family:var(--display);font-weight:500;font-size:1.15rem;margin-bottom:4px}
 .choice-d{display:block;font-size:13.5px;color:var(--text-soft);line-height:1.5}
 
 /* ---------- menu ---------- */
@@ -247,13 +250,13 @@ button{font-family:inherit}
 .chip:hover{border-color:var(--gold);color:var(--gold)}
 .chip.is-on{background:var(--gold);border-color:var(--gold);color:#08171A}
 .cat{padding-top:30px}
-.cat-h{font-size:1.35rem;display:flex;align-items:baseline;gap:10px;padding-bottom:8px;border-bottom:1.5px solid rgba(201,169,106,.5)}
-.cat-n{font-family:var(--body);font-size:13px;font-weight:600;color:var(--text-soft)}
+.cat-h{font-size:1.7rem;font-weight:400;display:flex;align-items:baseline;gap:10px;padding-bottom:8px;border-bottom:1.5px solid rgba(201,169,106,.5)}
+.cat-n{font-family:var(--body);font-size:11px;font-weight:400;text-transform:uppercase;letter-spacing:.16em;color:var(--text-soft)}
 .mlist{list-style:none;padding:0;margin:0}
 .mi{display:grid;grid-template-columns:34px 1fr auto;gap:10px 12px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line-2)}
-.mi-no{color:var(--gold);font-weight:700;font-size:12.5px;font-variant-numeric:tabular-nums;padding-top:2px;align-self:start}
+.mi-no{color:var(--gold);font-family:var(--body);font-weight:500;font-size:12px;font-variant-numeric:tabular-nums;padding-top:2px;align-self:start}
 .mi-body{min-width:0}
-.mi-name{display:block;font-weight:600;font-size:15.5px;line-height:1.35}
+.mi-name{display:block;font-family:var(--body);font-weight:500;font-size:15.5px;line-height:1.4}
 .mi-desc{display:block;font-size:13.5px;color:var(--text-soft);margin-top:3px;line-height:1.45}
 .mi-buy{display:flex;align-items:center;gap:12px;justify-content:flex-end}
 .mi-price{font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;font-size:15px}
@@ -307,19 +310,19 @@ button{font-family:inherit}
 .incl-cell{padding:22px 22px}
 .incl-cell h3{font-size:1.1rem;margin-bottom:6px}
 .incl-cell p{margin:0;font-size:14px;color:var(--text-soft);line-height:1.5}
-.incl-num{font-family:var(--display);font-weight:700;font-size:13px;color:var(--gold);display:block;margin-bottom:10px}
+.incl-num{font-family:var(--body);font-weight:400;font-size:11px;letter-spacing:.16em;color:var(--gold);display:block;margin-bottom:12px}
 .price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px}
 @media (max-width:820px){.price-grid{grid-template-columns:repeat(2,1fr)}}
 .price-card{padding:22px 22px 24px}
-.price-label{display:block;font-size:13px;font-weight:600;color:var(--gold);margin-bottom:12px}
+.price-label{display:block;font-family:var(--body);font-size:11px;font-weight:400;text-transform:uppercase;letter-spacing:.16em;color:var(--gold);margin-bottom:14px}
 .price-card.is-red .price-label{color:#FFD9DE}
-.price-value{display:block;font-family:var(--display);font-weight:700;font-size:clamp(1.9rem,6vw,2.4rem);line-height:1;font-variant-numeric:tabular-nums}
+.price-value{display:block;font-family:var(--display);font-weight:500;font-size:clamp(1.9rem,6vw,2.4rem);line-height:1;font-variant-numeric:tabular-nums}
 .price-sub{display:block;margin-top:8px;font-size:13px;color:var(--text-soft);line-height:1.5}
 .price-card.is-red .price-sub{color:rgba(255,255,255,.84)}
 .ta-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
 @media (max-width:700px){.ta-grid{grid-template-columns:1fr}}
 .ta-card{padding:26px 26px}
-.ta-price{font-family:var(--display);font-weight:700;font-size:2.2rem;line-height:1;display:block;margin-bottom:8px;color:var(--gold)}
+.ta-price{font-family:var(--display);font-weight:500;font-size:2.2rem;line-height:1;display:block;margin-bottom:8px;color:var(--gold)}
 .ta-card.is-red .ta-price{color:var(--white)}
 .ta-card h3{font-size:1.3rem;margin-bottom:8px}
 .ta-card p{margin:0;font-size:14.5px;color:var(--text-soft)}
@@ -372,20 +375,20 @@ button{font-family:inherit}
 @media (max-width:880px){.foot-grid{grid-template-columns:1fr 1fr;gap:34px 28px}}
 @media (max-width:520px){.foot-grid{grid-template-columns:1fr;gap:28px}}
 .foot-brand p{margin:0;max-width:30ch;line-height:1.7}
-.foot-h{font-family:var(--body);font-size:13px;font-weight:600;color:var(--gold);margin:0 0 12px}
+.foot-h{font-family:var(--body);font-size:11px;font-weight:400;text-transform:uppercase;letter-spacing:.16em;color:var(--gold);margin:0 0 14px}
 .foot-list{list-style:none;padding:0;margin:0}
 .foot-list li{padding:5px 0;line-height:1.6;overflow-wrap:anywhere}
 .foot-hours li{display:flex;justify-content:space-between;gap:16px;font-variant-numeric:tabular-nums}
 .foot-hours span:last-child{color:var(--text)}
-.foot-call{display:inline-block;margin-bottom:6px;font-family:var(--display);font-size:21px;font-weight:700;color:var(--text);border-bottom:2px solid var(--red);text-decoration:none}
+.foot-call{display:inline-block;margin-bottom:8px;font-family:var(--display);font-size:24px;font-weight:400;color:var(--text);border-bottom:2px solid var(--red);text-decoration:none}
 .foot-call:hover{border-bottom-color:var(--gold)}
 .foot-legal{margin-top:44px;padding-top:18px;border-top:1px solid var(--line-2);font-size:13px;color:rgba(236,239,234,.38)}
 
 /* ---------- nút nổi ---------- */
 .fab{
   position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:65;
-  padding:15px 26px;border:0;border-radius:999px;cursor:pointer;
-  font-family:var(--body);font-size:15.5px;font-weight:600;color:#08171A;
+  padding:16px 28px;border:0;border-radius:999px;cursor:pointer;
+  font-family:var(--body);font-size:12.5px;font-weight:500;text-transform:uppercase;letter-spacing:var(--eyebrow);color:#08171A;
   background:linear-gradient(180deg,#E4CE9C 0%,#C9A96A 52%,#A98A52 100%);
   box-shadow:0 12px 30px rgba(0,0,0,.5), 0 0 0 1px rgba(255,255,255,.18) inset;
   transition:transform .25s cubic-bezier(.2,.8,.3,1), opacity .25s, box-shadow .25s;
@@ -420,7 +423,7 @@ button{font-family:inherit}
 .oline{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center}
 .osum{font-weight:700;font-variant-numeric:tabular-nums;color:var(--gold)}
 .oempty{padding:36px 0;text-align:center;color:var(--text-soft)}
-.total{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0 4px;font-family:var(--display);font-weight:700;font-size:1.35rem;color:var(--gold)}
+.total{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0 4px;font-family:var(--display);font-weight:500;font-size:1.35rem;color:var(--gold)}
 .total small{font-family:var(--body);font-weight:400;font-size:13px;color:var(--text-soft)}
 .oform{margin-top:14px;display:grid;gap:10px}
 .oform label{display:block;font-size:13px;font-weight:600;margin-bottom:5px}
@@ -475,14 +478,14 @@ button{font-family:inherit}
 
   <symbol id="mark" viewBox="0 0 300 300">
     <rect width="300" height="300" rx="6" fill="#C8102E"/>
-    <text x="118" y="186" text-anchor="end" font-family="Baloo 2, Poppins, Arial, sans-serif" font-size="66" font-weight="800" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round" fill="#FFFFFF">V</text>
-    <text x="146" y="186" text-anchor="start" font-family="Baloo 2, Poppins, Arial, sans-serif" font-size="66" font-weight="800" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round" fill="#FFFFFF">ET</text>
+    <text x="118" y="186" text-anchor="end" font-family="Baloo 2, Arial, sans-serif" font-size="66" font-weight="800" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round" fill="#FFFFFF">V</text>
+    <text x="146" y="186" text-anchor="start" font-family="Baloo 2, Arial, sans-serif" font-size="66" font-weight="800" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round" fill="#FFFFFF">ET</text>
     <rect x="124" y="138" width="16" height="48" rx="3" fill="#4C9A3F"/>
     <line x1="124" y1="154" x2="140" y2="154" stroke="#2F6B26" stroke-width="2.5"/>
     <line x1="124" y1="170" x2="140" y2="170" stroke="#2F6B26" stroke-width="2.5"/>
     <path d="M140 142 q20 -13 31 -5 q-17 15 -31 5 Z" fill="#6FBF4A"/>
     <path d="M140 150 q22 3 30 13 q-20 5 -30 -13 Z" fill="#4C9A3F"/>
-    <text x="150" y="258" text-anchor="middle" font-family="Baloo 2, Poppins, Arial, sans-serif" font-size="66" font-weight="800" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round" letter-spacing="2" fill="#FFFFFF">FOOD</text>
+    <text x="150" y="258" text-anchor="middle" font-family="Baloo 2, Arial, sans-serif" font-size="66" font-weight="800" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round" letter-spacing="2" fill="#FFFFFF">FOOD</text>
     <g transform="translate(66,92) rotate(-20)">
       <path d="M0 -40 L52 26 Q0 48 -52 26 Z" fill="#E3C08D"/>
       <g stroke="#C9A164" stroke-width="1.8" fill="none">
@@ -522,8 +525,8 @@ button{font-family:inherit}
   </symbol>
 
   <symbol id="wordmark" viewBox="0 0 340 80">
-    <text x="50" y="60" text-anchor="end" font-family="Baloo 2, Poppins, Arial, sans-serif" font-size="54" font-weight="800" paint-order="stroke" stroke="url(#sheenRed)" stroke-width="3" stroke-linejoin="round" fill="url(#sheenRed)">V</text>
-    <text x="90" y="60" text-anchor="start" font-family="Baloo 2, Poppins, Arial, sans-serif" font-size="54" font-weight="800" letter-spacing="1" paint-order="stroke" stroke="url(#sheenRed)" stroke-width="3" stroke-linejoin="round" fill="url(#sheenRed)">ET FOOD</text>
+    <text x="50" y="60" text-anchor="end" font-family="Baloo 2, Arial, sans-serif" font-size="54" font-weight="800" paint-order="stroke" stroke="url(#sheenRed)" stroke-width="3" stroke-linejoin="round" fill="url(#sheenRed)">V</text>
+    <text x="90" y="60" text-anchor="start" font-family="Baloo 2, Arial, sans-serif" font-size="54" font-weight="800" letter-spacing="1" paint-order="stroke" stroke="url(#sheenRed)" stroke-width="3" stroke-linejoin="round" fill="url(#sheenRed)">ET FOOD</text>
     <rect x="57" y="22" width="14" height="38" rx="3" fill="#4C9A3F"/>
     <line x1="57" y1="35" x2="71" y2="35" stroke="#2F6B26" stroke-width="2"/>
     <line x1="57" y1="47" x2="71" y2="47" stroke="#2F6B26" stroke-width="2"/>
@@ -535,7 +538,7 @@ button{font-family:inherit}
   <svg class="bamboo bamboo-splash" viewBox="0 0 1200 420" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><use href="#bamboo"/></svg>
   <div class="splash-in">
     <span class="splash-mark"><svg viewBox="0 0 300 300" aria-hidden="true"><use href="#mark"/></svg></span>
-    <span class="splash-hello">Välkommen till Vietfood</span>
+    <span class="splash-hello">Välkommen till <em>Vietfood</em></span>
     <span class="splash-line"></span>
     <span class="splash-txt">Spiralen Galleria · Norrköping</span>
   </div>
@@ -587,7 +590,8 @@ button{font-family:inherit}
     <svg class="bamboo bamboo-hero" viewBox="0 0 1200 420" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><use href="#bamboo"/></svg>
     <div class="wrap hero-grid">
       <div class="hero-txt">
-        <h1>Välkommen till Vietfood</h1>
+        <p class="eyebrow">Spiralen Galleria · Norrköping</p>
+        <h1>Välkommen till<br><em>Vietfood</em></h1>
         <p class="hero-lede">Restaurangen ligger i Spiralen Galleria, Norrköping. Vi erbjuder <b>buffé</b> och <b>à la carte</b> — ät på plats eller ta med hem.</p>
         <p class="status" id="status" role="status">
           <span class="status-dot" aria-hidden="true"></span>

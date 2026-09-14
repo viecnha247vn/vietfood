@@ -136,7 +136,24 @@ button{font-family:inherit}
 .hero-grid{display:grid;grid-template-columns:1fr;gap:30px;justify-items:center;text-align:center}
 .hero-txt{max-width:44ch}
 .eyebrow{font-family:var(--body);font-size:11.5px;font-weight:400;text-transform:uppercase;letter-spacing:var(--eyebrow);color:var(--gold);margin:0 0 16px}
-.hero h1{font-size:clamp(2.4rem,8.4vw,4rem);margin:0 auto;line-height:1.06;font-weight:400}
+.hero h1{font-size:clamp(2rem,7.4vw,3.6rem);margin:0 auto;line-height:1.08;font-weight:400;text-transform:uppercase;letter-spacing:.015em}
+.shoot .shoot-in{display:inline-block}
+.shoot i{
+  display:inline-block;font-style:normal;white-space:pre;
+  opacity:0;transform:translate3d(90px,0,0) skewX(-14deg) scale(1.18);
+  filter:blur(4px);
+}
+.shoot.is-in i{
+  animation:shootIn .52s cubic-bezier(.16,.86,.3,1.28) forwards;
+  animation-delay:calc(var(--i) * 55ms);
+}
+@keyframes shootIn{
+  60%{opacity:1;filter:blur(0)}
+  to{opacity:1;transform:none;filter:blur(0)}
+}
+@media (prefers-reduced-motion:reduce){
+  .shoot i{opacity:1!important;transform:none!important;filter:none!important}
+}
 .hero-lede{margin:18px auto 0;color:var(--text-soft);font-size:1.12rem}
 @media (min-width:900px){
   .hero{padding:56px 0 64px}
@@ -548,7 +565,11 @@ button{font-family:inherit}
   var el = document.getElementById('splash'); if (!el) return;
   var reduce = false;
   try { reduce = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch(e){}
-  if (reduce){ el.parentNode.removeChild(el); return; }
+  if (reduce){
+    el.parentNode.removeChild(el);
+    setTimeout(function(){ if (typeof window.__onSplashDone === 'function') window.__onSplashDone(); }, 60);
+    return;
+  }
   var html = document.documentElement;
   html.style.overflow = 'hidden';
   var done = false;
@@ -556,6 +577,7 @@ button{font-family:inherit}
     if (done) return; done = true;
     el.className = 'splash is-done';
     html.style.overflow = '';
+    if (typeof window.__onSplashDone === 'function') window.__onSplashDone();
     setTimeout(function(){ if (el.parentNode) el.parentNode.removeChild(el); }, 900);
   }
   ['click','touchstart','keydown','wheel'].forEach(function(ev){
@@ -591,7 +613,7 @@ button{font-family:inherit}
     <div class="wrap hero-grid">
       <div class="hero-txt">
         <p class="eyebrow">Spiralen Galleria · Norrköping</p>
-        <h1>Välkommen till<br><em>Vietfood</em></h1>
+        <h1 class="shoot" id="heroTitle" aria-label="Vietfood Restaurang"><span class="shoot-in" aria-hidden="true">Vietfood Restaurang</span></h1>
         <p class="hero-lede">Restaurangen ligger i Spiralen Galleria, Norrköping. Vi erbjuder <b>buffé</b> och <b>à la carte</b> — ät på plats eller ta med hem.</p>
         <p class="status" id="status" role="status">
           <span class="status-dot" aria-hidden="true"></span>
@@ -1327,6 +1349,23 @@ button{font-family:inherit}
     }, {rootMargin:'-140px 0px -70% 0px', threshold:0});
     Array.prototype.forEach.call(document.querySelectorAll('.cat'), function(c){ io.observe(c); });
   }
+
+  /* ---------- tiêu đề bắn chữ ---------- */
+  (function(){
+    var h = $('heroTitle'); if (!h) return;
+    var wrap = h.querySelector('.shoot-in');
+    var text = wrap.textContent, frag = document.createDocumentFragment();
+    for (var i = 0; i < text.length; i++){
+      var el = document.createElement('i');
+      el.textContent = text[i] === ' ' ? '\u00A0' : text[i];
+      el.style.setProperty('--i', i);
+      frag.appendChild(el);
+    }
+    wrap.textContent = ''; wrap.appendChild(frag);
+    function go(){ h.className = 'shoot is-in'; }
+    if (document.getElementById('splash')) window.__onSplashDone = go;
+    else setTimeout(go, 220);
+  })();
 
   /* ---------- Boka & Beställ ---------- */
   (function(){

@@ -341,6 +341,23 @@ button{font-family:inherit}
 .info-card .hours td{padding:12px 0}
 .info-card .hours tr:first-child td{border-top:0}
 
+/* ---------- ảnh ---------- */
+.shot{position:relative;margin:0;border-radius:10px;overflow:hidden;border:1px solid var(--line);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.10), 0 16px 38px rgba(0,0,0,.4);background:var(--surface)}
+.shot img{display:block;width:100%;height:100%;object-fit:cover}
+.shot figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 20px 14px;
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.88);
+  background:linear-gradient(to top, rgba(4,10,12,.82), rgba(4,10,12,0))}
+.shot-wide{aspect-ratio:16/9;margin-top:30px}
+.gallery{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:14px;margin-top:30px}
+@media (max-width:820px){.gallery{grid-template-columns:1fr 1fr}.gallery .shot:first-child{grid-column:1/-1}}
+.gallery .shot{aspect-ratio:4/3}
+.find-shot{margin:0 0 22px;border-radius:8px;overflow:hidden;aspect-ratio:16/10;border:1px solid rgba(201,169,106,.22)}
+.find-shot img{display:block;width:100%;height:100%;object-fit:cover}
+.cat-shot{margin:14px 0 4px;border-radius:8px;overflow:hidden;aspect-ratio:21/9;border:1px solid var(--line);box-shadow:0 12px 28px rgba(0,0,0,.34)}
+.cat-shot img{display:block;width:100%;height:100%;object-fit:cover}
+@media (max-width:560px){.cat-shot{aspect-ratio:16/9}}
+
 /* ---------- buffé ---------- */
 .incl{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
 @media (max-width:760px){.incl{grid-template-columns:repeat(2,1fr)}}
@@ -674,6 +691,7 @@ button{font-family:inherit}
 
       <div class="card info-card" id="hitta">
         <h2 class="info-h">Hitta hit</h2>
+        <figure class="find-shot"><img src="media/interior-dining.jpg" alt="Viet Food i Spiralen Galleria" loading="lazy" width="1600" height="1200"></figure>
         <address>
           <b>Vietfood Spiralen Galleria</b><br>
           Hantverkaregatan 22, 602 32 Norrköping<br>
@@ -709,11 +727,29 @@ button{font-family:inherit}
     </div>
   </section>
 
+  <section class="band" id="atmosfar">
+    <div class="wrap">
+      <p class="eyebrow">Hos oss</p>
+      <h2 class="band-head">Mitt i Spiralen</h2>
+      <p class="lede measure">Entréplan, med plats för både snabb lunch och sällskap. Ät här hos oss eller ta med hem.</p>
+      <div class="gallery">
+        <figure class="shot"><img src="media/interior-dining.jpg" alt="Gäster som äter i Viet Foods matsal" loading="lazy" width="1600" height="1200"></figure>
+        <figure class="shot"><img src="media/interior-hall.jpg" alt="Matsalen med utsikt mot gallerian" loading="lazy" width="1600" height="1200"></figure>
+        <figure class="shot"><img src="media/interior-counter.jpg" alt="Disken och menyskärmarna hos Viet Food" loading="lazy" width="1600" height="1200"></figure>
+      </div>
+    </div>
+  </section>
+
   <section class="band band-sand" id="buffe">
     <svg class="leaf leaf-c" viewBox="0 0 300 300" aria-hidden="true"><use href="#leaf"/></svg>
     <div class="wrap">
       <h2 class="band-head">Buffé på plats, 129:-</h2>
       <p class="lede measure">Ingen lunchtid att passa och inga tillägg i kassan. Buffén står framme från att vi öppnar tills vi stänger.</p>
+
+      <figure class="shot shot-wide">
+        <img src="media/interior-buffe.jpg" alt="Buffédisken hos Viet Food med varmhållna rätter under värmelampor" loading="lazy" width="1600" height="1200">
+        <figcaption>Buffén i Spiralen Galleria</figcaption>
+      </figure>
 
       <div class="incl">
         <div class="card incl-cell">

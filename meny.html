@@ -1362,10 +1362,10 @@ button{font-family:inherit}
   /* ---------- Boka & Beställ ---------- */
   (function(){
     var m = $('bokamodal'), bg = $('bokabg'), btn = $('bokabtn');
-    if (!m || !btn) return;
+    if (!m || !bg) return;              // nút ở hero chỉ có trên trang chủ — không bắt buộc
     function open(){ m.className='modal is-on'; bg.className='sheet-bg is-on'; document.body.style.overflow='hidden'; }
     function close(){ m.className='modal'; bg.className='sheet-bg'; document.body.style.overflow=''; }
-    btn.addEventListener('click', open);
+    if (btn) btn.addEventListener('click', open);
     var fab = $('fab'); if (fab) fab.addEventListener('click', open);
     $('boka-x').addEventListener('click', close);
     bg.addEventListener('click', close);

@@ -871,10 +871,10 @@ button{font-family:inherit}
       <span class="choice-t">Beställ take away</span>
       <span class="choice-d">Välj rätter ur menyn och skicka beställningen. Hämtas i restaurangen.</span>
     </button>
-    <a class="choice" href="tel:+46709190150">
+    <button type="button" class="choice" id="choice-table">
       <span class="choice-t">Boka bord</span>
-      <span class="choice-d">Ring 0709 190 150 — vi tar bokningar per telefon under öppettid.</span>
-    </a>
+      <span class="choice-d">Välj datum, tid och antal personer. Du kan också ringa 0709 190 150.</span>
+    </button>
     <a class="choice" href="#buffe" id="choice-buffe">
       <span class="choice-t">Buffé på plats, 139:-</span>
       <span class="choice-d">Ingen bokning behövs. Buffén står framme hela öppettiden.</span>
@@ -929,6 +929,52 @@ button{font-family:inherit}
     <div class="oacts">
       <button type="button" class="btn btn-ghost" id="done-new">Ny beställning</button>
     </div>
+  </div>
+</aside>
+
+<!-- boka bord -->
+<div class="sheet-bg" id="bsheetbg"></div>
+<aside class="sheet" id="bsheet" role="dialog" aria-modal="true" aria-labelledby="bsheet-title">
+  <div class="sheet-h">
+    <h2 id="bsheet-title">Boka bord</h2>
+    <button type="button" class="sheet-x" id="bsheet-x" aria-label="Stäng">×</button>
+  </div>
+
+  <div class="sheet-body" id="bsheet-body">
+    <form class="oform" id="bform" novalidate>
+      <div class="row">
+        <div><label for="b-date">Datum</label><input id="b-date" type="date" required></div>
+        <div><label for="b-time">Tid</label><select id="b-time" required></select></div>
+      </div>
+      <div class="row">
+        <div><label for="b-guests">Antal personer</label>
+          <select id="b-guests">
+            <option>1</option><option selected>2</option><option>3</option><option>4</option>
+            <option>5</option><option>6</option><option>7</option><option>8</option>
+            <option>9</option><option>10</option><option>11</option><option>12</option>
+          </select>
+        </div>
+        <div><label for="b-tel">Mobilnummer</label><input id="b-tel" type="tel" autocomplete="tel" inputmode="tel" required></div>
+      </div>
+      <div><label for="b-name">Namn</label><input id="b-name" type="text" autocomplete="name" required></div>
+      <div><label for="b-mail">E-post <small style="font-weight:400;color:rgba(236,239,234,.62)">— du får en bekräftelse</small></label><input id="b-mail" type="email" autocomplete="email" inputmode="email" required></div>
+      <div><label for="b-note">Meddelande</label><textarea id="b-note" placeholder="Barnstol, allergier, födelsedag …"></textarea></div>
+      <p class="oerr" id="b-err">Fyll i datum, tid, namn, mobilnummer och en giltig e-postadress.</p>
+      <div class="oacts">
+        <button type="submit" class="btn btn-red" id="b-send">Skicka bokning</button>
+        <p class="ohint" style="margin:4px 0 0">Går det inte att skicka? <a href="tel:+46709190150">Ring 0709 190 150</a>.</p>
+      </div>
+      <p class="ohint">Vi bekräftar bokningen per e-post eller telefon. Sällskap över 12 personer — ring oss så löser vi det.</p>
+    </form>
+  </div>
+
+  <div class="sheet-body odone" id="bdone" hidden>
+    <div class="odone-mark" aria-hidden="true">✓</div>
+    <h3>Tack, <span id="bdone-name"></span>!</h3>
+    <p class="odone-no">Bokning <b id="bdone-id"></b></p>
+    <p>Vi har tagit emot din bokning och skickat en bekräftelse till <b id="bdone-mail"></b>.</p>
+    <div class="odone-sum" id="bdone-sum"></div>
+    <div class="oacts"><button type="button" class="btn btn-ghost" id="bdone-close">Stäng</button></div>
   </div>
 </aside>
 
@@ -1231,6 +1277,12 @@ button{font-family:inherit}
     $('boka-x').addEventListener('click', close);
     bg.addEventListener('click', close);
     $('choice-buffe').addEventListener('click', close);
+    var ct = $('choice-table');
+    if (ct) ct.addEventListener('click', function(){
+      close();
+      if (typeof window.__openBooking === 'function') window.__openBooking();
+      else location.href = 'tel:+46709190150';
+    });
     $('choice-order').addEventListener('click', function(){
       close();
       var el = document.getElementById('meny');
@@ -1277,6 +1329,107 @@ button{font-family:inherit}
         });
       }, {threshold:0.25}).observe(v);
     } else { v.preload='auto'; v.load(); play(); }
+  })();
+
+
+  /* ---------- boka bord ---------- */
+  (function(){
+    var sheet = $('bsheet'), bg = $('bsheetbg');
+    if (!sheet || !bg) return;
+    function open(){ sheet.className='sheet is-on'; bg.className='sheet-bg is-on'; document.body.style.overflow='hidden'; }
+    function close(){ sheet.className='sheet'; bg.className='sheet-bg'; document.body.style.overflow=''; }
+    window.__openBooking = open;
+    $('bsheet-x').addEventListener('click', close);
+    bg.addEventListener('click', close);
+    document.addEventListener('keydown', function(e){ if (e.key==='Escape') close(); });
+    $('bdone-close').addEventListener('click', function(){
+      close();
+      $('bdone').hidden = true; $('bsheet-body').hidden = false;
+      $('bform').reset(); fillTimes();
+    });
+
+    var dEl=$('b-date'), tEl=$('b-time');
+    function iso(d){ return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2); }
+    var t0 = new Date();
+    dEl.min = iso(t0);
+    dEl.max = iso(new Date(t0.getTime() + 60*86400000));
+    dEl.value = iso(t0);
+
+    function fillTimes(){
+      tEl.innerHTML = '';
+      var v = dEl.value; if (!v) return;
+      var p = v.split('-'), dt = new Date(+p[0], +p[1]-1, +p[2]);
+      var h = HOURS[dt.getDay()]; if (!h) return;
+      var start = h[0]*60, stop = h[1]*60 - 30;
+      if (v === iso(new Date())) start = Math.max(start, Math.ceil((now.minutes+60)/30)*30);
+      var any = false;
+      for (var t = start; t <= stop; t += 30){
+        var o = document.createElement('option');
+        o.value = hm(t); o.textContent = hm(t); tEl.appendChild(o); any = true;
+      }
+      if (!any){
+        var o2 = document.createElement('option');
+        o2.value = ''; o2.textContent = 'Inga tider kvar — välj ett annat datum';
+        tEl.appendChild(o2);
+      }
+    }
+    dEl.addEventListener('change', fillTimes);
+    fillTimes();
+
+    function f(id){ return $(id).value.trim(); }
+    function valid(){
+      var ok = dEl.value && tEl.value && f('b-name') && f('b-tel') &&
+               /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f('b-mail'));
+      $('b-err').className = 'oerr' + (ok ? '' : ' is-on');
+      if (!ok){
+        if (!dEl.value || !tEl.value) dEl.focus();
+        else if (!f('b-name')) $('b-name').focus();
+        else if (!f('b-tel')) $('b-tel').focus();
+        else $('b-mail').focus();
+      }
+      return !!ok;
+    }
+    function summary(){
+      return 'Datum: ' + dEl.value + '\nTid: ' + tEl.value +
+             '\nAntal personer: ' + $('b-guests').value +
+             '\nNamn: ' + f('b-name') + '\nMobil: ' + f('b-tel') +
+             '\nE-post: ' + f('b-mail') +
+             (f('b-note') ? '\nMeddelande: ' + f('b-note') : '');
+    }
+    function done(id){
+      $('bdone-name').textContent = f('b-name');
+      $('bdone-id').textContent = id;
+      $('bdone-mail').textContent = f('b-mail');
+      $('bdone-sum').textContent = dEl.value + ' kl ' + tEl.value + ' · ' +
+                                   $('b-guests').value + ' personer';
+      $('bsheet-body').hidden = true; $('bdone').hidden = false;
+    }
+
+    $('bform').addEventListener('submit', function(ev){
+      ev.preventDefault();
+      if (!valid()) return;
+      var id = 'VF-B' + Date.now().toString(36).slice(-4).toUpperCase();
+      var btn = $('b-send');
+      var data = { type:'booking', id:id, name:f('b-name'), phone:f('b-tel'), email:f('b-mail'),
+                   date:dEl.value, time:tEl.value, guests:$('b-guests').value, note:f('b-note'),
+                   text:'Bordsbokning ' + id + ' – Viet Food Spiralen\n' + summary() };
+      if (CONFIG.ENDPOINT){
+        btn.disabled = true; btn.textContent = 'Skickar …';
+        fetch(CONFIG.ENDPOINT, {method:'POST', body:JSON.stringify(data)})
+          .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
+          .then(function(d){ if (d && d.error) throw new Error(d.error); done(d && d.id ? d.id : id); })
+          .catch(function(){
+            btn.disabled = false; btn.textContent = 'Skicka bokning';
+            $('b-err').textContent = 'Det gick inte att skicka just nu. Ring oss på 0709 190 150.';
+            $('b-err').className = 'oerr is-on';
+          });
+      } else {
+        location.href = 'mailto:' + MAIL + '?cc=' + encodeURIComponent(f('b-mail'))
+          + '&subject=' + encodeURIComponent('Bordsbokning ' + id + ' – ' + f('b-name'))
+          + '&body=' + encodeURIComponent(data.text);
+        setTimeout(function(){ done(id); }, 900);
+      }
+    });
   })();
 
   render();

@@ -446,7 +446,11 @@ button{font-family:inherit}
 .foot-hours span:last-child{color:var(--text)}
 .foot-call{display:inline-block;margin-bottom:8px;font-family:var(--display);font-size:24px;font-weight:400;color:var(--text);border-bottom:2px solid var(--red);text-decoration:none}
 .foot-call:hover{border-bottom-color:var(--gold)}
-.foot-legal{margin-top:44px;padding-top:18px;border-top:1px solid var(--line-2);font-size:13px;color:rgba(236,239,234,.38)}
+.foot-legal{margin-top:44px;padding-top:18px;border-top:1px solid var(--line-2);font-size:13px;
+  color:rgba(236,239,234,.38);display:flex;justify-content:space-between;align-items:baseline;gap:12px 28px;flex-wrap:wrap}
+.credit{font-size:12.5px}
+.credit a{color:rgba(236,239,234,.55);border-bottom-color:rgba(236,239,234,.18)}
+.credit a:hover{color:var(--gold);border-bottom-color:var(--gold)}
 
 /* ---------- nút nổi ---------- */
 .fab{
@@ -861,7 +865,10 @@ button{font-family:inherit}
         </ul>
       </div>
     </div>
-    <div class="foot-legal">© <span id="year">2026</span> Viet Food Spiralen, Hantverkaregatan 22, 602 32 Norrköping</div>
+    <div class="foot-legal">
+      <span>© <span id="year">2026</span> Viet Food Spiralen, Hantverkaregatan 22, 602 32 Norrköping</span>
+      <span class="credit">Webbdesign av <a href="https://q89.se" target="_blank" rel="noopener">QDesign</a> · <a href="https://q89.se" target="_blank" rel="noopener">q89.se</a></span>
+    </div>
   </div>
 </footer>
 
